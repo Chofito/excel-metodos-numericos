@@ -1,0 +1,13 @@
+export { solveExcelBisection } from './bisection'
+export { solveExcelDividedDifferences } from './dividedDifferences'
+export { solveExcelFalsePosition } from './falsePosition'
+export { solveExcelFixedPoint } from './fixedPoint'
+export { solveExcelGaussSeidel } from './gaussSeidel'
+export { solveExcelJacobi } from './jacobi'
+export { solveExcelLagrange } from './lagrange'
+export { solveExcelMuller } from './muller'
+export { solveExcelNewton } from './newton'
+export { solveExcelNonlinearFixedPoint } from './nonlinearFixedPoint'
+export { solveExcelSecant } from './secant'
+export { solveExcelSteffensen } from './steffensen'
+

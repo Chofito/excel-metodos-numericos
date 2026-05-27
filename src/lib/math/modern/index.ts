@@ -1,0 +1,13 @@
+export { solveModernBisection } from './bisection'
+export { solveModernDividedDifferences } from './dividedDifferences'
+export { solveModernFalsePosition } from './falsePosition'
+export { solveModernFixedPoint } from './fixedPoint'
+export { solveModernGaussSeidel } from './gaussSeidel'
+export { solveModernJacobi } from './jacobi'
+export { solveModernLagrange } from './lagrange'
+export { solveModernMuller } from './muller'
+export { solveModernNewton } from './newton'
+export { solveModernNonlinearFixedPoint } from './nonlinearFixedPoint'
+export { solveModernSecant } from './secant'
+export { solveModernSteffensen } from './steffensen'
+
