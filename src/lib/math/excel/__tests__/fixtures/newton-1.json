@@ -1,0 +1,12 @@
+{
+	"description": "f(x)=x^3-x-2, x0=1.5, tol=0.001, n=20. Derivada progresiva VBA con h=0.1 fijo.",
+	"input": {
+		"formula": "x^3-x-2",
+		"x0": 1.5,
+		"tolerance": 0.001,
+		"maxIterations": 20
+	},
+	"status": null,
+	"rows": [],
+	"approximation": null
+}

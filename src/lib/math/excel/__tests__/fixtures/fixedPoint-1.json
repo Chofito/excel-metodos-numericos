@@ -1,0 +1,12 @@
+{
+	"description": "g(x)=(x+2)^(1/3), x0=1, tol=0.001, n=20. Raiz de x^3-x-2 via punto fijo.",
+	"input": {
+		"transformFormula": "(x+2)^(1/3)",
+		"x0": 1,
+		"tolerance": 0.001,
+		"maxIterations": 20
+	},
+	"status": null,
+	"rows": [],
+	"approximation": null
+}

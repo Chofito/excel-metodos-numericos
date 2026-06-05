@@ -1,5 +1,5 @@
-import type { MethodResult, NumericInput } from '../../types'
-import { solveFixedPoint } from '../../solvers/roots'
+import { solveFixedPoint } from "../../solvers/roots";
+import type { MethodResult, NumericInput } from "../../types";
 
-export const solveExcelFixedPoint = (input: NumericInput): MethodResult => solveFixedPoint(input, false)
-
+export const solveExcelFixedPoint = (input: NumericInput): MethodResult =>
+	solveFixedPoint(input, false);

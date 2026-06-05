@@ -1,0 +1,12 @@
+{
+	"description": "2D: g1=cos(x2), g2=sin(x1), x1=0, x2=0, tol=0.001, n=20. VBA escribe fila inicial 0.",
+	"input": {
+		"equations": ["cos(x2)", "sin(x1)", ""],
+		"initialVector": [0, 0, 0, 0, 0, 0],
+		"tolerance": 0.001,
+		"maxIterations": 20
+	},
+	"status": null,
+	"rows": [],
+	"approximation": null
+}

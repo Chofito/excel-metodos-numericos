@@ -1,5 +1,6 @@
-import type { MethodResult, NumericInput } from '../../types'
-import { solveDividedDifferences } from '../../solvers/interpolation'
+import { solveDividedDifferences } from "../../solvers/interpolation";
+import type { MethodResult, NumericInput } from "../../types";
 
-export const solveExcelDividedDifferences = (input: NumericInput): MethodResult => solveDividedDifferences(input, false)
-
+export const solveExcelDividedDifferences = (
+	input: NumericInput,
+): MethodResult => solveDividedDifferences(input, false);

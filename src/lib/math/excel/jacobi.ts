@@ -1,4 +1,5 @@
-import type { MethodResult, NumericInput } from '../../types'
-import { solveExcelJacobiCompat } from '../../solvers/systems'
+import { solveExcelJacobiCompat } from "../../solvers/systems";
+import type { MethodResult, NumericInput } from "../../types";
 
-export const solveExcelJacobi = (input: NumericInput): MethodResult => solveExcelJacobiCompat(input)
+export const solveExcelJacobi = (input: NumericInput): MethodResult =>
+	solveExcelJacobiCompat(input);

@@ -1,0 +1,13 @@
+{
+	"description": "f(x)=x^3-x-2, a=1, b=2, tol=0.001, n=20",
+	"input": {
+		"formula": "x^3-x-2",
+		"a": 1,
+		"b": 2,
+		"tolerance": 0.001,
+		"maxIterations": 20
+	},
+	"status": null,
+	"rows": [],
+	"approximation": null
+}

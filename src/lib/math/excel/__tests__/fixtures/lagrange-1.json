@@ -1,0 +1,17 @@
+{
+	"description": "3 puntos: (0,1),(1,2),(2,5), targetX=1.5. VBA maxN=2 = TS pointCount=3.",
+	"input": {
+		"pointCount": 3,
+		"points": [
+			{ "x": 0, "y": 1 },
+			{ "x": 1, "y": 2 },
+			{ "x": 2, "y": 5 },
+			{ "x": 4, "y": 16 },
+			{ "x": 5, "y": 25 }
+		],
+		"targetX": 1.5
+	},
+	"status": null,
+	"rows": [],
+	"approximation": null
+}

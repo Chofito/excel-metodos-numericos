@@ -1,0 +1,14 @@
+{
+	"description": "f(x)=x^3-x-2, x0=1, x1=1.5, x2=2, tol=0.001, n=10. Discriminante positivo.",
+	"input": {
+		"formula": "x^3-x-2",
+		"x0": 1,
+		"x1": 1.5,
+		"x2": 2,
+		"tolerance": 0.001,
+		"maxIterations": 10
+	},
+	"status": null,
+	"rows": [],
+	"approximation": null
+}

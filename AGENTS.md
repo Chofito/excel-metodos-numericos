@@ -20,7 +20,11 @@ Comandos disponibles para el usuario:
 bun install
 bun run dev
 bun run build
-bun run lint
+bun run lint      # alias de biome check
+bun run check
+bun run check:fix
+bun run format
+bun test
 ```
 
 ## Prioridad del proyecto

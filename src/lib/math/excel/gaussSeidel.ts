@@ -1,4 +1,5 @@
-import type { MethodResult, NumericInput } from '../../types'
-import { solveExcelGaussSeidelCompat } from '../../solvers/systems'
+import { solveExcelGaussSeidelCompat } from "../../solvers/systems";
+import type { MethodResult, NumericInput } from "../../types";
 
-export const solveExcelGaussSeidel = (input: NumericInput): MethodResult => solveExcelGaussSeidelCompat(input)
+export const solveExcelGaussSeidel = (input: NumericInput): MethodResult =>
+	solveExcelGaussSeidelCompat(input);
