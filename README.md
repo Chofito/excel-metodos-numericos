@@ -136,10 +136,36 @@ El usuario ejecuta los comandos del proyecto:
 
 ```bash
 bun install
-bun run dev
+bun run dev          # http://localhost:5173/excel-metodos-numericos/
 bun run build
 bun run lint
+bun run preview:pages
 ```
+
+## Publicacion (GitHub Pages)
+
+Sitio previsto en:
+
+```txt
+https://www.chofito.dev/excel-metodos-numericos/
+```
+
+Requisitos en GitHub (una sola vez):
+
+1. Ir a **Settings → Pages → Build and deployment**.
+2. Elegir **Source: GitHub Actions**.
+3. Hacer push a `main` (o ejecutar el workflow **Deploy to GitHub Pages** manualmente).
+
+El workflow `.github/workflows/deploy.yml` construye `dist/` con `base: /excel-metodos-numericos/` y despliega via GitHub Pages.
+
+Verificacion local antes de publicar:
+
+```bash
+bun run build
+bun run preview:pages
+```
+
+La app debe cargar en `http://localhost:4173/excel-metodos-numericos/` con assets y calculos funcionando.
 
 ## Estado del proyecto
 

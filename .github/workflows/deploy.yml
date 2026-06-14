@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+
+      - name: Verify production bundle (not dev source)
+        run: |
+          if grep -q '/src/main.tsx' dist/index.html; then
+            echo 'dist/index.html still references /src/main.tsx — build did not produce a production bundle'
+            exit 1
+          fi
+          if ! grep -q '/excel-metodos-numericos/' dist/index.html; then
+            echo 'dist/index.html missing GitHub Pages base path prefix'
+            exit 1
+          fi
+          test -n "$(find dist/assets -maxdepth 1 -name '*.js' -print -quit)"
+
+      - name: Ensure GitHub Pages marker
+        run: touch dist/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
