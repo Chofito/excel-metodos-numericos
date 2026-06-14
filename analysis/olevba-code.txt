@@ -1,0 +1,2224 @@
+olevba 0.60.2 on Python 3.12.13 - http://decalage.info/python/oletools
+===============================================================================
+FILE: /Users/chofito/universe/chofito/excel-metodos-numericos/PLANTILLA DE METODOS NUMERICOS_office 2007.xlsm
+Type: OpenXML
+WARNING  For now, VBA stomping cannot be detected for files in memory
+-------------------------------------------------------------------------------
+VBA MACRO ThisWorkbook.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/ThisWorkbook'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "ThisWorkbook"
+Attribute VB_Base = "0{00020819-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja1.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja1"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja2.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja2"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja3.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja3'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja3"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO biseccion_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/biseccion_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "biseccion_AR"
+Public a, b, i, a1, a2, b1, p, ba, fdp, Tolerancia As Double
+Public bandera, n, nIteracion, Fila As Integer
+Public Formula As String
+Private Sub Datos_Iniciales()
+    b = Cells(4, 7).Value
+    a = Cells(3, 7).Value
+    Tolerancia = Cells(5, 7).Value
+    n = Cells(6, 7).Value
+    Fila = 8
+If f(a) < 0 And f(b) > 0 Or f(a) > 0 And f(b) < 0 Then
+MsgBox "EL METODO FUNCIONA PORQUE HAY CAMBIO DE SIGNO" & vbCrLf & "f(a)= " + Str(f(a)) & vbCrLf & "f(b)= " + Str(f(b)), vbInformation, "Msc. RENALDO GIRON ALVARADO / MATEMATICA APLICADA 3"
+bandera = 1
+Else
+bandera = 0
+    Range("B9:J109").Clear
+    MsgBox "EL METODO FRACASO PORQUE NO HAY CAMBIO DE SIGNO", vbInformation, "Msc. RENALDO GIRON ALVARADO / MATEMATICA APLICADA 3"
+    
+End If
+
+End Sub
+Private Function f(ByVal X As Double) As Double
+    Dim Ecuacion As String
+    Ecuacion = Cells(2, 7).Value
+        
+    Formula = Replace(Ecuacion, "x", X)
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+    
+    f = Evaluate(Formula)
+End Function
+Sub biseccion_AR()
+
+    nIteracion = nIteracion + 1
+
+    ba = (b - a) / 2
+    p = a + ba
+    fdp = f(p)
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion
+    Cells(Fila + nIteracion, 3).Value = a
+    Cells(Fila + nIteracion, 4).Value = b
+    Cells(Fila + nIteracion, 5).Value = p
+    Cells(Fila + nIteracion, 6).Value = f(a)
+    Cells(Fila + nIteracion, 7).Value = f(b)
+    Cells(Fila + nIteracion, 8).Value = f(p)
+    Cells(Fila + nIteracion, 9).Value = f(a) * f(p)
+    Cells(Fila + nIteracion, 10).Value = ba
+
+    If (ba < Tolerancia) Or (fdp = 0) Then
+                
+             Cells(Fila + nIteracion + 2, 5).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & p
+    MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. ING. RENALDO GIRON A."
+    Else
+        If nIteracion < n Then
+            If f(a) * fdp > 0 Then
+                a = p
+            Else
+                b = p
+            End If
+            biseccion_AR
+        Else
+        
+            Cells(Fila + nIteracion + 2, 2).Value = "el metodo fracaso en la iteracion (" & n & ")"
+        MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O CAMBIAR EL INTERVALO", vbInformation, "MSC. ING. RENALDO GIRON A."
+        End If
+    End If
+End Sub
+Sub inicio_biseccion()
+    Range("B9:J109").Value = ""
+    Datos_Iniciales
+    nIteracion = 0
+    biseccion_AR
+End Sub
+Sub limpiar()
+    Range("B9:J109").Clear
+    Range("V8:W12").Clear
+    nIteracion = 0
+End Sub
+
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja4.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja4'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja4"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja5.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja5'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja5"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja6.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja6'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja6"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO puntofijo_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/puntofijo_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "puntofijo_AR"
+Public Po, P1, Error, Tolerancia As Double
+Public maxIteracion, nIteracion, Fila, i, i2 As Integer
+Public Formula, Formu As String
+Private Sub ParametrosIniciales()
+    Po = Cells(4, 6).Value
+    Tolerancia = Cells(5, 6).Value
+    maxIteracion = Cells(6, 6).Value
+    Fila = 8
+End Sub
+Private Function g(ByVal X As Double) As Double
+    Dim Ecuacion As String
+    Ecuacion = Cells(3, 6).Value
+    Formula = Replace(Ecuacion, "x", X)
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+        
+    g = Evaluate(Formula)
+End Function
+
+Sub puntofijo()
+    nIteracion = nIteracion + 1
+
+
+    P1 = g(Po)
+        Error = Abs(P1 - Po)
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion
+    Cells(Fila + nIteracion, 4).Value = P1
+    Cells(Fila + nIteracion, 5).Value = Error
+    Cells(Fila + nIteracion, 3).Value = Po
+    
+    If Error < Tolerancia Then
+     
+        Cells(Fila + nIteracion + 2, 2).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & P1
+  MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. ING. RENALDO GIRON A."
+    Else
+        If nIteracion < maxIteracion Then
+            Po = P1
+            puntofijo
+        Else
+            Cells(Fila + nIteracion + 2, 2).Value = "El metodo fracaso con las iteraciones solicitadas (" & maxIteracion & ")"
+        MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O CAMBIAR EL PUNTO DE ARRANQUE", vbInformation, "MSC. ING. RENALDO GIRON A."
+        End If
+    End If
+End Sub
+Sub inicio_puntofijo()
+    Range("B9:E108").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    puntofijo
+End Sub
+
+Sub limpiar()
+    Range("B9:E109").Clear
+    Range("T8:W12").Clear
+    nIteracion = 0
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO secante_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/secante_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "secante_AR"
+Public xActual, xAnterior, xSiguiente As Double
+Public fxActual, fxAnterior, Tolerancia, Error As Double
+Public maxIteracion, nIteracion, Fila, i, b As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales()
+    xActual = Cells(4, 5).Value
+    xAnterior = Cells(3, 5).Value
+    Tolerancia = Cells(5, 5).Value
+    maxIteracion = Cells(6, 5).Value
+    Fila = 8
+End Sub
+
+Private Function f(ByVal X As Double) As Double
+    Dim Ecuacion As String
+    Ecuacion = Cells(2, 5).Value
+    
+    Formula = Replace(Ecuacion, "x", X)
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+
+    f = Evaluate(Formula)
+End Function
+
+Sub Secante()
+
+    nIteracion = nIteracion + 1
+    
+    xSiguiente = xActual - ((f(xActual) * (xActual - xAnterior)) / (f(xActual) - f(xAnterior)))
+    
+    Error = Abs(xSiguiente - xActual)
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion
+    Cells(Fila + nIteracion, 4).Value = xActual
+    Cells(Fila + nIteracion, 3).Value = xAnterior
+    Cells(Fila + nIteracion, 5).Value = xSiguiente
+    Cells(Fila + nIteracion, 6).Value = Error
+
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            xAnterior = xActual
+            xActual = xSiguiente
+            Secante
+        Else
+            Cells(Fila + nIteracion + 2, 2).Value = "El metodo fracaso con las iteraciones solicitadas (" & maxIteracion & ")"
+        MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O CAMBIAR EL INTERVALO", vbInformation, "Msc. RENALDO GIRON A."
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 2).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & xSiguiente
+    MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. RENALDO GIRON A."
+    End If
+
+End Sub
+
+Sub inicio_secante()
+    Range("B9:F109").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    Secante
+End Sub
+Sub limpiar()
+    Range("B9:F109").Clear
+    Range("V8:W12").Clear
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja7.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja7'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja7"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO posicionfalsa_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/posicionfalsa_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "posicionfalsa_AR"
+Public xActual, xAnterior, xSiguiente1, xSiguiente2 As Double
+Public fxActual, fxAnterior, Tolerancia, Error, errorsecante As Double
+Public maxIteracion, nIteracion, Fila, i As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales()
+    xActual = Cells(4, 5).Value
+    xAnterior = Cells(3, 5).Value
+    Tolerancia = Cells(5, 5).Value
+    maxIteracion = Cells(6, 5).Value
+    
+    
+    xSiguiente1 = xActual - ((f(xActual) * (xActual - xAnterior)) / (f(xActual) - f(xAnterior)))
+    errorsecante = Abs(xActual - xSiguiente1)
+    Cells(9, 2).Value = 1
+    Cells(9, 4).Value = xActual
+    Cells(9, 3).Value = xAnterior
+    Cells(9, 5).Value = xSiguiente1
+    Cells(9, 6).Value = errorsecante
+    xAnterior = xSiguiente1
+    Fila = 9
+End Sub
+
+Private Function f(ByVal X As Double) As Double
+    Dim Ecuacion As String
+    Ecuacion = Cells(2, 5).Value
+    
+    Formula = Replace(Ecuacion, "x", X)
+        
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+    
+    f = Evaluate(Formula)
+End Function
+
+Sub PosicionFalsa()
+        
+    nIteracion = nIteracion + 1
+    xSiguiente2 = xActual - ((f(xActual) * (xActual - xAnterior)) / (f(xActual) - f(xAnterior)))
+    
+    Error = Abs(xAnterior - xSiguiente2)
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion + 1
+    Cells(Fila + nIteracion, 4).Value = xActual
+    Cells(Fila + nIteracion, 3).Value = xAnterior
+    Cells(Fila + nIteracion, 5).Value = xSiguiente2
+    Cells(Fila + nIteracion, 6).Value = Error
+
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            xAnterior = xSiguiente2
+            PosicionFalsa
+        Else
+             
+            Cells(Fila + nIteracion + 2, 2).Value = "El metodo fracaso con las iteraciones solicitadas (" & maxIteracion & ")"
+        MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O CAMBIAR EL INTERVALO", vbInformation, "MSC. ING. RENALDO GIRON A."
+        End If
+    Else
+                 
+        Cells(Fila + nIteracion + 2, 2).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & xSiguiente2
+    MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. RENALDO GIRON A."
+    End If
+End Sub
+
+Sub inicio_posicionfalsa()
+    Range("B9:F109").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    PosicionFalsa
+End Sub
+Sub limpiar()
+    Range("B9:G109").Clear
+    Range("V8:W12").Clear
+    nIteracion = 0
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO newton_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/newton_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "newton_AR"
+Public Po, P1, Tolerancia, Error As Double
+Public maxIteracion, nIteracion, Fila, i, i2 As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales()
+    Po = Cells(4, 5).Value
+    Tolerancia = Cells(5, 5).Value
+    maxIteracion = Cells(6, 5).Value
+    Fila = 8
+End Sub
+Private Function f(ByVal X As Double) As Double
+    Dim Ecuacion As String
+    Ecuacion = Cells(2, 5).Value
+        Formula = Replace(Formula, "e", "2.71828182846")
+    Formula = Replace(Formula, "pi", "3.14159265359")
+    Formula = Replace(Ecuacion, "x", X)
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+    
+    f = Evaluate(Formula)
+End Function
+
+
+Sub Newton()
+
+    nIteracion = nIteracion + 1
+    
+    P1 = Po - (f(Po) / ((1 / (12 * 0.1) * (-25 * f(Po) + 48 * f(Po + 0.1) - 36 * f(Po + 2 * 0.1) + 16 * f(Po + 3 * 0.1) - 3 * f(Po + 4 * 0.1)))))
+    
+    Error = Abs(P1 - Po)
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion
+    Cells(Fila + nIteracion, 4).Value = P1
+    Cells(Fila + nIteracion, 5).Value = Error
+        Cells(Fila + nIteracion, 3).Value = Po
+
+    If Error < Tolerancia Then
+    
+        Cells(Fila + nIteracion + 2, 2).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & P1
+    MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. ING. RENALDO GIRON A."
+    Else
+        If nIteracion < maxIteracion Then
+            Po = P1
+            Newton
+        Else
+            
+            Cells(Fila + nIteracion + 2, 2).Value = "La ecuacion no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O CAMBIAR EL VALOR INICIAL DE ARRANQUE", vbInformation, "MSC. ING. RENALDO GIRON A."
+        End If
+    End If
+End Sub
+
+Sub inicio_newton()
+    Range("B9:G109").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    Newton
+End Sub
+
+
+Sub limpiar()
+    Range("B9:E109").Clear
+    Range("T8:W12").Clear
+    nIteracion = 0
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO steffenssen_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/steffenssen_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "steffenssen_AR"
+Public p, Po, P1, P2, Error, Tolerancia As Double
+Public maxIteracion, i, nIteracion, Fila As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales()
+    Po = Cells(3, 5).Value
+    Tolerancia = Cells(4, 5).Value
+    maxIteracion = Cells(5, 5).Value
+    Fila = 7
+End Sub
+
+Private Function g(ByVal X As Double) As Double
+    ' Funcion para evaluar la ecuacion analizada
+    Dim Ecuacion As String
+    Ecuacion = Cells(2, 5).Value
+    
+    Formula = Replace(Ecuacion, "x", X)
+    
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+    
+    g = Evaluate(Formula)
+End Function
+
+Sub Steffensen_AR()
+    nIteracion = nIteracion + 1
+    
+    P1 = g(Po)
+    P2 = g(P1)
+    p = Po - ((P1 - Po) ^ 2) / (P2 - 2 * P1 + Po)
+    
+    Error = Abs(p - Po)
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion
+    Cells(Fila + nIteracion, 4).Value = P1
+    Cells(Fila + nIteracion, 5).Value = P2
+    Cells(Fila + nIteracion, 6).Value = p
+    Cells(Fila + nIteracion, 3).Value = Po
+    Cells(Fila + nIteracion, 7).Value = Error
+
+    If Error < Tolerancia Then
+        
+        Cells(Fila + nIteracion + 2, 2).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & p
+    MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. ING. RENALDO GIRON A."
+    Else
+        If nIteracion < maxIteracion Then
+            Po = p
+            Steffensen_AR
+        Else
+            Cells(Fila + nIteracion + 2, 2).Value = "La ecuacion no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+         MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O CAMBIAR EL VALOR DE PUNTO DE ARRANQUE", vbInformation, "MSC. ING. RENALDO GIRON A."
+        End If
+    End If
+End Sub
+Sub limpiar()
+    Range("B8:G109").Clear
+    Range("V8:W12").Clear
+    nIteracion = 0
+End Sub
+Sub inicio_steffenssen()
+    Range("B8:D108").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    Steffensen_AR
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO muller_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/muller_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "muller_AR"
+Public x0, x1, x2, fx1, fx2, fx0 As Double
+Public Tolerancia, Error As Double
+Public h, h1, h2, g1, g2, d, DD, b, p As Double
+Public maxIteracion, nIteracion, Fila, i As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales()
+    x0 = Cells(3, 5).Value
+    x1 = Cells(4, 5).Value
+    x2 = Cells(5, 5).Value
+    Tolerancia = Cells(6, 5).Value
+    maxIteracion = Cells(7, 5).Value
+    Fila = 9
+End Sub
+
+Private Function f(ByVal X As Double) As Double
+    ' Funcion para evaluar la ecuacion analizada
+    Dim Ecuacion As String
+    Ecuacion = Cells(2, 5).Value
+    
+    Formula = Replace(Ecuacion, "x", X)
+    
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+    
+    f = Evaluate(Formula)
+End Function
+
+Sub Muller()
+    nIteracion = nIteracion + 1
+    
+    h1 = x1 - x0
+    h2 = x2 - x1
+    fx1 = f(x1)
+    fx2 = f(x2)
+    fx0 = f(x0)
+    g1 = (f(x1) - f(x0)) / h1
+    g2 = (f(x2) - f(x1)) / h2
+    d = (g2 - g1) / (h1 + h2)
+
+    
+    b = g2 + (h2 * d)
+    
+    DD = (b ^ 2 - 4 * f(x2) * d) ^ (1 / 2)
+    
+    If Abs(b - DD) < Abs(b + DD) Then
+        Error = b + DD
+    Else
+        Error = b - DD
+    End If
+    
+    h = (-2 * f(x2)) / Error
+    
+    p = x2 + h
+    
+    Cells(Fila + nIteracion, 2).Value = nIteracion
+    Cells(Fila + nIteracion, 6).Value = p
+    Cells(Fila + nIteracion, 11).Value = Abs(h)
+    Cells(Fila + nIteracion, 3).Value = x0
+    Cells(Fila + nIteracion, 4).Value = x1
+    Cells(Fila + nIteracion, 5).Value = x2
+    Cells(Fila + nIteracion, 7).Value = f(x0)
+    Cells(Fila + nIteracion, 8).Value = f(x1)
+    Cells(Fila + nIteracion, 9).Value = f(x2)
+    Cells(Fila + nIteracion, 10).Value = f(p)
+
+
+    If Abs(h) > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            x0 = x1
+            x1 = x2
+            x2 = p
+            Muller
+        Else
+            Cells(Fila + nIteracion + 2, 2).Value = "La ecuacion no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        MsgBox "EL METODO FRACASO, HAY QUE HACER MAS ITERACIONES O HAY QUE CAMBIAR LOS DATOS INICIALES DE ARRANQUE ", vbInformation, "MSC. ING. RENALDO GIRON A."
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 2).Value = "La raiz se encontro en la " & nIteracion & " iteracion, con un valor de " & p
+    MsgBox "SE ECONTRO LA APROXIMACION A LA RAIZ", vbInformation, "MSC. ING. RENALDO GIRON A."
+    End If
+End Sub
+
+Sub PrincipalMuller()
+    Range("B10:D110").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    Muller
+End Sub
+Sub limpiar_muller()
+    Range("B10:L109").Clear
+    Range("V8:W12").Clear
+    nIteracion = 0
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja8.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja8'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja8"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO UserForm1.frm 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/UserForm1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "UserForm1"
+Attribute VB_Base = "0{1B188AFF-FDDF-4AC5-B0DC-6EC1E0B3061A}{6F461C8B-4856-4B3D-96B7-44B243382187}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = False
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja9.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja9'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja9"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+Public x0, x1, x2, X3, x4, Po, no, Pox As Double
+Public fx0, fx1, fx2, fx3, fx4 As Double
+Public f1, f2, f3, f4, f5, f6, f7, f8, f9, f10 As Double
+Public Hasx4 As Boolean
+
+Private Sub ParametrosIniciales()
+    Dim i As Integer
+    Dim Instruccion1, Instruccion2 As String
+    
+    no = Cells(4, 6).Value
+    Po = Cells(6, 6).Value
+    x0 = Cells(10, 3).Value
+    x1 = Cells(10, 4).Value
+    x2 = Cells(10, 5).Value
+    X3 = Cells(10, 6).Value
+    x4 = Cells(10, 7).Value
+    fx4 = Cells(11, 7).Value
+    fx0 = Cells(11, 3).Value
+    fx1 = Cells(11, 4).Value
+    fx2 = Cells(11, 5).Value
+    fx3 = Cells(11, 6).Value
+End Sub
+
+Sub Neville()
+    If no = 2 Then
+    f1 = (fx0 * (Po - x1) - fx1 * (Po - x0)) / (x0 - x1)
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(15, 4).Value = f1
+    
+    Cells(21, 2).Value = "LA APROXIMACION POR NEVILLE ES " & f1 & ""
+        
+    End If
+    
+    If no = 3 Then
+    f1 = (fx0 * (Po - x1) - fx1 * (Po - x0)) / (x0 - x1)
+    f2 = (fx1 * (Po - x2) - fx2 * (Po - x1)) / (x1 - x2)
+    f5 = (f1 * (Po - x2) - f2 * (Po - x0)) / (x0 - x2)
+    
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(16, 2).Value = x2
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(16, 3).Value = fx2
+    Cells(15, 4).Value = f1
+    Cells(16, 4).Value = f2
+    Cells(16, 5).Value = f5
+    Cells(21, 2).Value = "LA APROXIMACION POR NEVILLE ES " & f5 & ""
+        
+    End If
+    
+    If no = 4 Then
+    f1 = (fx0 * (Po - x1) - fx1 * (Po - x0)) / (x0 - x1)
+    f2 = (fx1 * (Po - x2) - fx2 * (Po - x1)) / (x1 - x2)
+    f3 = (fx2 * (Po - X3) - fx3 * (Po - x2)) / (x2 - X3)
+    f5 = (f1 * (Po - x2) - f2 * (Po - x0)) / (x0 - x2)
+    f6 = (f2 * (Po - X3) - f3 * (Po - x1)) / (x1 - X3)
+    f8 = (f5 * (Po - X3) - f6 * (Po - x0)) / (x0 - X3)
+    
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(16, 2).Value = x2
+    Cells(17, 2).Value = X3
+    
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(16, 3).Value = fx2
+    Cells(17, 3).Value = fx3
+    
+    Cells(15, 4).Value = f1
+    Cells(16, 4).Value = f2
+    Cells(17, 4).Value = f3
+    
+    Cells(16, 5).Value = f5
+    Cells(17, 5).Value = f6
+    
+    Cells(17, 6).Value = f8
+    
+    Cells(21, 2).Value = "LA APROXIMACION POR NEVILLE ES " & f8 & ""
+        
+    End If
+    
+    If no = 5 Then
+    f1 = (fx0 * (Po - x1) - fx1 * (Po - x0)) / (x0 - x1)
+    f2 = (fx1 * (Po - x2) - fx2 * (Po - x1)) / (x1 - x2)
+    f3 = (fx2 * (Po - X3) - fx3 * (Po - x2)) / (x2 - X3)
+    f4 = (fx3 * (Po - x4) - fx4 * (Po - X3)) / (X3 - x4)
+    f5 = (f1 * (Po - x2) - f2 * (Po - x0)) / (x0 - x2)
+    f6 = (f2 * (Po - X3) - f3 * (Po - x1)) / (x1 - X3)
+    f7 = (f3 * (Po - x4) - f4 * (Po - x2)) / (x2 - x4)
+    f8 = (f5 * (Po - X3) - f6 * (Po - x0)) / (x0 - X3)
+    f9 = (f6 * (Po - x4) - f7 * (Po - x1)) / (x1 - x4)
+    f10 = (f8 * (Po - x4) - f9 * (Po - x0)) / (x0 - x4)
+    
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(16, 2).Value = x2
+    Cells(17, 2).Value = X3
+    Cells(18, 2).Value = x4
+    
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(16, 3).Value = fx2
+    Cells(17, 3).Value = fx3
+    Cells(18, 3).Value = fx4
+    
+    Cells(15, 4).Value = f1
+    Cells(16, 4).Value = f2
+    Cells(17, 4).Value = f3
+    Cells(18, 4).Value = f4
+    
+    Cells(16, 5).Value = f5
+    Cells(17, 5).Value = f6
+    Cells(18, 5).Value = f7
+    
+    Cells(17, 6).Value = f8
+    Cells(18, 6).Value = f9
+    
+    Cells(18, 7).Value = f10
+    
+    
+    Cells(21, 2).Value = "LA APROXIMACION POR NEVILLE ES " & f10 & ""
+        
+    End If
+    
+    
+    
+End Sub
+
+Sub PrincipalNeville()
+    Range("B14:G18").Value = ""
+    ParametrosIniciales
+    Neville
+End Sub
+Sub limpiar_neville()
+    Range("B14:G18").Clear
+End Sub
+
+
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja11.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja11'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja11"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO indice_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/indice_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "indice_AR"
+Sub ir_biseccion()
+    Sheets("Biseccion").Select
+End Sub
+Sub ir_secante()
+    Sheets("Secante").Select
+End Sub
+Sub ir_punto()
+    Sheets("Punto Fijo").Select
+End Sub
+Sub ir_posicion()
+    Sheets("Posicion Falsa").Select
+End Sub
+Sub ir_Newton()
+    Sheets("Newton").Select
+End Sub
+Sub ir_neville()
+    Sheets("Neville").Select
+End Sub
+Sub ir_lagrange()
+    Sheets("Lagrange").Select
+End Sub
+Sub ir_indice()
+    Sheets("Caratula").Select
+End Sub
+Sub ir_steffenssen()
+    Sheets("Steffenssen").Select
+End Sub
+Sub ir_prog()
+    Sheets("Progresivas").Select
+End Sub
+Sub ir_reg()
+    Sheets("Regresivas").Select
+End Sub
+Sub ir_jacobi()
+    Sheets("Jacobi").Select
+End Sub
+Sub ir_gauss()
+    Sheets("Gauss Seidel").Select
+End Sub
+Sub ir_muller()
+    Sheets("Muller").Select
+End Sub
+Sub ir_puntoNL()
+    Sheets("Punto Fijo NL").Select
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja10.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja10'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja10"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja13.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja13'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja13"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja14.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja14'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja14"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+Public V1, V2, V3, V4, V5, V6, Vs1, Vs2, Vs3, Vs4, Vs5, Vs6, Vy6, Error As Double
+Public Tolerancia, E1, E2, E3, E4, E5, E6 As Double
+Public maxIteracion, nIteracion, Fila As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales()
+        
+    Tolerancia = Cells(12, 8).Value
+    maxIteracion = Cells(10, 8).Value
+    
+    V1 = Cells(10, 3).Value
+    V2 = Cells(11, 3).Value
+    V3 = Cells(12, 3).Value
+    
+    Fila = 14
+End Sub
+
+
+Sub jacobi_AR()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = ((Cells(6, 6).Value - Cells(6, 4).Value * V2 - Cells(6, 5).Value * V3) / (Cells(6, 3).Value))
+    Vs2 = ((Cells(7, 6).Value - Cells(7, 3).Value * V1 - Cells(7, 5).Value * V3) / (Cells(7, 4).Value))
+    Vs3 = ((Cells(8, 6).Value - Cells(8, 3).Value * V1 - Cells(8, 4).Value * V2) / (Cells(8, 5).Value))
+    
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+      
+   If E1 >= E2 And E1 >= E3 Then
+      Error = E1
+   End If
+   
+         If E2 >= E1 And E2 >= E3 Then
+            Error = E2
+         End If
+    
+               If E3 >= E1 And E3 >= E2 Then
+                   Error = E3
+               End If
+
+    
+    
+    
+    Cells(Fila + nIteracion, 1).Value = nIteracion
+    Cells(Fila + nIteracion, 2).Value = Vs1
+    Cells(Fila + nIteracion, 3).Value = Vs2
+    Cells(Fila + nIteracion, 4).Value = Vs3
+    Cells(Fila + nIteracion, 5).Value = E1
+    Cells(Fila + nIteracion, 6).Value = E2
+    Cells(Fila + nIteracion, 7).Value = E3
+    Cells(Fila + nIteracion, 8).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            jacobi_AR
+        Else
+            Cells(Fila + nIteracion + 2, 1).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 1).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & "."
+    End If
+End Sub
+
+Sub PrincipalJacobi()
+    Range("A15:I119").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    jacobi_AR
+End Sub
+Sub limpiar()
+    Range("A15:I119").Clear
+End Sub
+
+Private Sub ParametrosIniciales_4()
+        
+    Tolerancia = Cells(11, 15).Value
+    maxIteracion = Cells(9, 15).Value
+    
+    V1 = Cells(9, 18).Value
+    V2 = Cells(10, 18).Value
+    V3 = Cells(11, 18).Value
+    V4 = Cells(12, 18).Value
+    
+    Fila = 14
+    
+End Sub
+
+Sub jacobi_AR_4()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = ((Cells(4, 17).Value - Cells(4, 14).Value * V2 - Cells(4, 15).Value * V3 - Cells(4, 16).Value * V4) / (Cells(4, 13).Value))
+    Vs2 = ((Cells(5, 17).Value - Cells(5, 13).Value * V1 - Cells(5, 15).Value * V3 - Cells(5, 16).Value * V4) / (Cells(5, 14).Value))
+    Vs3 = ((Cells(6, 17).Value - Cells(6, 13).Value * V1 - Cells(6, 14).Value * V2 - Cells(6, 16).Value * V4) / (Cells(6, 15).Value))
+    Vs4 = ((Cells(7, 17).Value - Cells(7, 13).Value * V1 - Cells(7, 14).Value * V2 - Cells(7, 15).Value * V3) / (Cells(7, 16).Value))
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+    E4 = Abs(Vs4 - V4)
+      
+    If E1 >= E2 And E1 >= E3 And E1 >= E4 Then
+                   Error = E1
+    End If
+            If E2 >= E1 And E2 >= E3 And E2 >= E4 Then
+                Error = E2
+            End If
+                   If E3 >= E1 And E3 >= E2 And E3 >= E4 Then
+                      Error = E3
+                   End If
+    
+                          If E4 >= E1 And E4 >= E2 And E4 >= E3 Then
+                              Error = E4
+                          End If
+    
+        
+    Cells(Fila + nIteracion, 11).Value = nIteracion
+    Cells(Fila + nIteracion, 12).Value = Vs1
+    Cells(Fila + nIteracion, 13).Value = Vs2
+    Cells(Fila + nIteracion, 14).Value = Vs3
+    Cells(Fila + nIteracion, 15).Value = Vs4
+    Cells(Fila + nIteracion, 16).Value = E1
+    Cells(Fila + nIteracion, 17).Value = E2
+    Cells(Fila + nIteracion, 18).Value = E3
+    Cells(Fila + nIteracion, 19).Value = E4
+    Cells(Fila + nIteracion, 20).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            V4 = Vs4
+            jacobi_AR_4
+        Else
+            Cells(Fila + nIteracion + 2, 11).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 11).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & ","
+        Cells(Fila + nIteracion + 3, 16).Value = " X4 = " & Vs4 & " ."
+    End If
+End Sub
+Sub PrincipalJacobi_4()
+    Range("k15:U119").Value = ""
+    ParametrosIniciales_4
+    nIteracion = 0
+    jacobi_AR_4
+End Sub
+Sub limpiar_4()
+    Range("k15:U119").Clear
+End Sub
+
+Private Sub ParametrosIniciales_5()
+        
+    Tolerancia = Cells(11, 28).Value
+    maxIteracion = Cells(9, 28).Value
+          
+    V1 = Cells(9, 31).Value
+    V2 = Cells(10, 31).Value
+    V3 = Cells(11, 31).Value
+    V4 = Cells(12, 31).Value
+    V5 = Cells(13, 31).Value
+    Fila = 15
+
+End Sub
+Sub jacobi_AR_5()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = ((Cells(3, 30).Value - Cells(3, 26).Value * V2 - Cells(3, 27).Value * V3 - Cells(3, 28).Value * V4 - Cells(3, 29).Value * V5) / (Cells(3, 25).Value))
+    Vs2 = ((Cells(4, 30).Value - Cells(4, 25).Value * V1 - Cells(4, 27).Value * V3 - Cells(4, 28).Value * V4 - Cells(4, 29).Value * V5) / (Cells(4, 26).Value))
+    Vs3 = ((Cells(5, 30).Value - Cells(5, 25).Value * V1 - Cells(5, 26).Value * V2 - Cells(5, 28).Value * V4 - Cells(5, 29).Value * V5) / (Cells(5, 27).Value))
+    Vs4 = ((Cells(6, 30).Value - Cells(6, 25).Value * V1 - Cells(6, 26).Value * V2 - Cells(6, 27).Value * V3 - Cells(6, 29).Value * V5) / (Cells(6, 28).Value))
+    Vs5 = ((Cells(7, 30).Value - Cells(7, 25).Value * V1 - Cells(7, 26).Value * V2 - Cells(7, 27).Value * V3 - Cells(7, 28).Value * V4) / (Cells(7, 29).Value))
+        
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+    E4 = Abs(Vs4 - V4)
+    E5 = Abs(Vs5 - V5)
+      
+    If E1 >= E2 And E1 >= E3 And E1 >= E4 And E1 >= E5 Then
+                   Error = E1
+    End If
+            If E2 >= E1 And E2 >= E3 And E2 >= E4 And E2 >= E5 Then
+                Error = E2
+            End If
+                   If E3 >= E1 And E3 >= E2 And E3 >= E4 And E3 >= E5 Then
+                      Error = E3
+                   End If
+                          If E4 >= E1 And E4 >= E2 And E4 >= E3 And E4 >= E5 Then
+                              Error = E4
+                          End If
+                                If E5 >= E1 And E5 >= E2 And E5 >= E3 And E5 >= E4 Then
+                                    Error = E5
+                                End If
+        
+    Cells(Fila + nIteracion, 23).Value = nIteracion
+    Cells(Fila + nIteracion, 24).Value = Vs1
+    Cells(Fila + nIteracion, 25).Value = Vs2
+    Cells(Fila + nIteracion, 26).Value = Vs3
+    Cells(Fila + nIteracion, 27).Value = Vs4
+    Cells(Fila + nIteracion, 28).Value = Vs5
+    Cells(Fila + nIteracion, 29).Value = E1
+    Cells(Fila + nIteracion, 30).Value = E2
+    Cells(Fila + nIteracion, 31).Value = E3
+    Cells(Fila + nIteracion, 32).Value = E4
+    Cells(Fila + nIteracion, 33).Value = E5
+    Cells(Fila + nIteracion, 34).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            V4 = Vs4
+            V5 = Vs5
+            jacobi_AR_5
+        Else
+            Cells(Fila + nIteracion + 2, 23).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 23).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & ","
+        Cells(Fila + nIteracion + 3, 28).Value = " X4 = " & Vs4 & " y X5 = " & Vs5 & "."
+    End If
+End Sub
+Sub PrincipalJacobi_5()
+    Range("W16:AH119").Value = ""
+    ParametrosIniciales_5
+    nIteracion = 0
+    jacobi_AR_5
+End Sub
+Sub limpiar_5()
+    Range("W16:AH119").Clear
+End Sub
+
+Private Sub ParametrosIniciales_6()
+        
+    Tolerancia = Cells(14, 45).Value
+    maxIteracion = Cells(11, 45).Value
+          
+    V1 = Cells(11, 40).Value
+    V2 = Cells(12, 40).Value
+    V3 = Cells(13, 40).Value
+    V4 = Cells(14, 40).Value
+    V5 = Cells(15, 40).Value
+    V6 = Cells(16, 40).Value
+    Fila = 18
+
+End Sub
+Sub jacobi_AR_6()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = (Cells(4, 45).Value - Cells(4, 40).Value * V2 - Cells(4, 41).Value * V3 - Cells(4, 42).Value * V4 - Cells(4, 43).Value * V5 - Cells(4, 45).Value * V6) / Cells(4, 39).Value
+    Vs2 = (Cells(5, 45).Value - Cells(5, 39).Value * V1 - Cells(5, 41).Value * V3 - Cells(5, 42).Value * V4 - Cells(5, 43).Value * V5 - Cells(5, 44).Value * V6) / Cells(5, 40).Value
+    Vs3 = (Cells(6, 45).Value - Cells(6, 39).Value * V1 - Cells(6, 40).Value * V2 - Cells(6, 42).Value * V4 - Cells(6, 43).Value * V5 - Cells(6, 44).Value * V6) / Cells(6, 41).Value
+    Vs4 = (Cells(7, 45).Value - Cells(7, 39).Value * V1 - Cells(7, 40).Value * V2 - Cells(7, 41).Value * V3 - Cells(7, 43).Value * V5 - Cells(7, 44).Value * V6) / Cells(7, 42).Value
+    Vs5 = (Cells(8, 45).Value - Cells(8, 39).Value * V1 - Cells(8, 40).Value * V2 - Cells(8, 41).Value * V3 - Cells(8, 42).Value * V4 - Cells(8, 44).Value * V6) / Cells(8, 43).Value
+    Vs6 = (Cells(9, 45).Value - Cells(9, 39).Value * V1 - Cells(9, 40).Value * V2 - Cells(9, 41).Value * V3 - Cells(9, 42).Value * V4 - Cells(9, 43).Value * V5) / Cells(9, 44).Value
+    
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+    E4 = Abs(Vs4 - V4)
+    E5 = Abs(Vs5 - V5)
+    E6 = Abs(Vs6 - V6)
+      
+    If E1 >= E2 And E1 >= E3 And E1 >= E4 And E1 >= E5 And E1 >= E6 Then
+                   Error = E1
+    End If
+            If E2 >= E1 And E2 >= E3 And E2 >= E4 And E2 >= E5 And E2 >= E6 Then
+                Error = E2
+            End If
+                   If E3 >= E1 And E3 >= E2 And E3 >= E4 And E3 >= E5 And E3 >= E6 Then
+                      Error = E3
+                   End If
+                          If E4 >= E1 And E4 >= E2 And E4 >= E3 And E4 >= E5 And E4 >= E6 Then
+                              Error = E4
+                          End If
+                                If E5 >= E1 And E5 >= E2 And E5 >= E3 And E5 >= E4 And E5 >= E6 Then
+                                    Error = E5
+                                End If
+                                
+                                      If E6 >= E1 And E6 >= E2 And E6 >= E3 And E6 >= E4 And E6 >= E5 Then
+                                            Error = E6
+                                      End If
+        
+    Cells(Fila + nIteracion, 36).Value = nIteracion
+    Cells(Fila + nIteracion, 37).Value = Vs1
+    Cells(Fila + nIteracion, 38).Value = Vs2
+    Cells(Fila + nIteracion, 39).Value = Vs3
+    Cells(Fila + nIteracion, 40).Value = Vs4
+    Cells(Fila + nIteracion, 41).Value = Vs5
+    Cells(Fila + nIteracion, 42).Value = Vs6
+    Cells(Fila + nIteracion, 43).Value = E1
+    Cells(Fila + nIteracion, 44).Value = E2
+    Cells(Fila + nIteracion, 45).Value = E3
+    Cells(Fila + nIteracion, 46).Value = E4
+    Cells(Fila + nIteracion, 47).Value = E5
+    Cells(Fila + nIteracion, 48).Value = E6
+    Cells(Fila + nIteracion, 49).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            V4 = Vs4
+            V5 = Vs5
+            V6 = Vs6
+            jacobi_AR_6
+        Else
+            Cells(Fila + nIteracion + 2, 37).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 3, 37).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & ","
+        Cells(Fila + nIteracion + 4, 40).Value = " X4 = " & Vs4 & ", X5 = " & Vs5 & "y X6=" & Vs6 & "."
+        
+    End If
+End Sub
+Sub PrincipalJacobi_6()
+    Range("AJ19:AW119").Value = ""
+    ParametrosIniciales_6
+    nIteracion = 0
+    jacobi_AR_6
+End Sub
+Sub limpiar_6()
+    Range("AJ19:AW119").Clear
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja15.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja15'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja15"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+Public V1, V2, V3, V4, V5, V6, Vs1, Vs2, Vs3, Vs4, Vs5, Vs6, Vy6, Error As Double
+Public Tolerancia, E1, E2, E3, E4, E5, E6 As Double
+Public maxIteracion, nIteracion, Fila As Integer
+Public Formula As String
+
+Private Sub ParametrosIniciales_3g()
+        
+    Tolerancia = Cells(12, 8).Value
+    maxIteracion = Cells(10, 8).Value
+    
+    V1 = Cells(10, 3).Value
+    V2 = Cells(11, 3).Value
+    V3 = Cells(12, 3).Value
+    
+    Fila = 14
+End Sub
+
+
+Sub gaussseidel3g_AR()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = ((Cells(6, 6).Value - Cells(6, 4).Value * V2 - Cells(6, 5).Value * V3) / (Cells(6, 3).Value))
+    Vs2 = ((Cells(7, 6).Value - Cells(7, 3).Value * Vs1 - Cells(7, 5).Value * V3) / (Cells(7, 4).Value))
+    Vs3 = ((Cells(8, 6).Value - Cells(8, 3).Value * Vs1 - Cells(8, 4).Value * Vs2) / (Cells(8, 5).Value))
+    
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+      
+   If E1 >= E2 And E1 >= E3 Then
+      Error = E1
+   End If
+   
+         If E2 >= E1 And E2 >= E3 Then
+            Error = E2
+         End If
+    
+               If E3 >= E1 And E3 >= E2 Then
+                   Error = E3
+               End If
+
+        Cells(Fila + nIteracion, 1).Value = nIteracion
+    Cells(Fila + nIteracion, 2).Value = Vs1
+    Cells(Fila + nIteracion, 3).Value = Vs2
+    Cells(Fila + nIteracion, 4).Value = Vs3
+    Cells(Fila + nIteracion, 5).Value = E1
+    Cells(Fila + nIteracion, 6).Value = E2
+    Cells(Fila + nIteracion, 7).Value = E3
+    Cells(Fila + nIteracion, 8).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            gaussseidel3g_AR
+        Else
+            Cells(Fila + nIteracion + 2, 1).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 1).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & "."
+    End If
+End Sub
+
+Sub Principalgaussseidel_3g()
+    Range("A15:I119").Value = ""
+    ParametrosIniciales_3g
+    nIteracion = 0
+    gaussseidel3g_AR
+End Sub
+Sub limpiar()
+    Range("A15:I119").Clear
+End Sub
+
+Private Sub ParametrosIniciales_4g()
+        
+    Tolerancia = Cells(11, 15).Value
+    maxIteracion = Cells(9, 15).Value
+    
+    V1 = Cells(9, 18).Value
+    V2 = Cells(10, 18).Value
+    V3 = Cells(11, 18).Value
+    V4 = Cells(12, 18).Value
+    
+    Fila = 14
+    
+End Sub
+
+Sub gaussseidel4g_AR()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = ((Cells(4, 17).Value - Cells(4, 14).Value * V2 - Cells(4, 15).Value * V3 - Cells(4, 16).Value * V4) / (Cells(4, 13).Value))
+    Vs2 = ((Cells(5, 17).Value - Cells(5, 13).Value * Vs1 - Cells(5, 15).Value * V3 - Cells(5, 16).Value * V4) / (Cells(5, 14).Value))
+    Vs3 = ((Cells(6, 17).Value - Cells(6, 13).Value * Vs1 - Cells(6, 14).Value * Vs2 - Cells(6, 16).Value * V4) / (Cells(6, 15).Value))
+    Vs4 = ((Cells(7, 17).Value - Cells(7, 13).Value * Vs1 - Cells(7, 14).Value * Vs2 - Cells(7, 15).Value * Vs3) / (Cells(7, 16).Value))
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+    E4 = Abs(Vs4 - V4)
+      
+    If E1 >= E2 And E1 >= E3 And E1 >= E4 Then
+                   Error = E1
+    End If
+            If E2 >= E1 And E2 >= E3 And E2 >= E4 Then
+                Error = E2
+            End If
+                   If E3 >= E1 And E3 >= E2 And E3 >= E4 Then
+                      Error = E3
+                   End If
+    
+                          If E4 >= E1 And E4 >= E2 And E4 >= E3 Then
+                              Error = E4
+                          End If
+    
+        
+    Cells(Fila + nIteracion, 11).Value = nIteracion
+    Cells(Fila + nIteracion, 12).Value = Vs1
+    Cells(Fila + nIteracion, 13).Value = Vs2
+    Cells(Fila + nIteracion, 14).Value = Vs3
+    Cells(Fila + nIteracion, 15).Value = Vs4
+    Cells(Fila + nIteracion, 16).Value = E1
+    Cells(Fila + nIteracion, 17).Value = E2
+    Cells(Fila + nIteracion, 18).Value = E3
+    Cells(Fila + nIteracion, 19).Value = E4
+    Cells(Fila + nIteracion, 20).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            V4 = Vs4
+            gaussseidel4g_AR
+        Else
+            Cells(Fila + nIteracion + 2, 11).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 11).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & ","
+        Cells(Fila + nIteracion + 3, 16).Value = " X4 = " & Vs4 & " ."
+    End If
+End Sub
+Sub Principalgaussseidel_4g()
+    Range("k15:U119").Value = ""
+    ParametrosIniciales_4g
+    nIteracion = 0
+    gaussseidel4g_AR
+End Sub
+Sub limpiar_4g()
+    Range("k15:U119").Clear
+End Sub
+
+Private Sub ParametrosIniciales_5g()
+        
+    Tolerancia = Cells(11, 28).Value
+    maxIteracion = Cells(9, 28).Value
+          
+    V1 = Cells(9, 31).Value
+    V2 = Cells(10, 31).Value
+    V3 = Cells(11, 31).Value
+    V4 = Cells(12, 31).Value
+    V5 = Cells(13, 31).Value
+    Fila = 15
+
+End Sub
+Sub gaussseidel5g_AR()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = ((Cells(3, 30).Value - Cells(3, 26).Value * V2 - Cells(3, 27).Value * V3 - Cells(3, 28).Value * V4 - Cells(3, 29).Value * V5) / (Cells(3, 25).Value))
+    Vs2 = ((Cells(4, 30).Value - Cells(4, 25).Value * Vs1 - Cells(4, 27).Value * V3 - Cells(4, 28).Value * V4 - Cells(4, 29).Value * V5) / (Cells(4, 26).Value))
+    Vs3 = ((Cells(5, 30).Value - Cells(5, 25).Value * Vs1 - Cells(5, 26).Value * Vs2 - Cells(5, 28).Value * V4 - Cells(5, 29).Value * V5) / (Cells(5, 27).Value))
+    Vs4 = ((Cells(6, 30).Value - Cells(6, 25).Value * Vs1 - Cells(6, 26).Value * Vs2 - Cells(6, 27).Value * Vs3 - Cells(6, 29).Value * V5) / (Cells(6, 28).Value))
+    Vs5 = ((Cells(7, 30).Value - Cells(7, 25).Value * Vs1 - Cells(7, 26).Value * Vs2 - Cells(7, 27).Value * Vs3 - Cells(7, 28).Value * Vs4) / (Cells(7, 29).Value))
+        
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+    E4 = Abs(Vs4 - V4)
+    E5 = Abs(Vs5 - V5)
+      
+    If E1 >= E2 And E1 >= E3 And E1 >= E4 And E1 >= E5 Then
+                   Error = E1
+    End If
+            If E2 >= E1 And E2 >= E3 And E2 >= E4 And E2 >= E5 Then
+                Error = E2
+            End If
+                   If E3 >= E1 And E3 >= E2 And E3 >= E4 And E3 >= E5 Then
+                      Error = E3
+                   End If
+                          If E4 >= E1 And E4 >= E2 And E4 >= E3 And E4 >= E5 Then
+                              Error = E4
+                          End If
+                                If E5 >= E1 And E5 >= E2 And E5 >= E3 And E5 >= E4 Then
+                                    Error = E5
+                                End If
+        
+    Cells(Fila + nIteracion, 23).Value = nIteracion
+    Cells(Fila + nIteracion, 24).Value = Vs1
+    Cells(Fila + nIteracion, 25).Value = Vs2
+    Cells(Fila + nIteracion, 26).Value = Vs3
+    Cells(Fila + nIteracion, 27).Value = Vs4
+    Cells(Fila + nIteracion, 28).Value = Vs5
+    Cells(Fila + nIteracion, 29).Value = E1
+    Cells(Fila + nIteracion, 30).Value = E2
+    Cells(Fila + nIteracion, 31).Value = E3
+    Cells(Fila + nIteracion, 32).Value = E4
+    Cells(Fila + nIteracion, 33).Value = E5
+    Cells(Fila + nIteracion, 34).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            V4 = Vs4
+            V5 = Vs5
+            gaussseidel5g_AR
+        Else
+            Cells(Fila + nIteracion + 2, 23).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 2, 23).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & ","
+        Cells(Fila + nIteracion + 3, 28).Value = " X4 = " & Vs4 & " y X5 = " & Vs5 & "."
+    End If
+End Sub
+Sub Principalgaussseidel_5g()
+    Range("W16:AH119").Value = ""
+    ParametrosIniciales_5g
+    nIteracion = 0
+    gaussseidel5g_AR
+End Sub
+Sub limpiar_5g()
+    Range("W16:AH119").Clear
+End Sub
+
+Private Sub ParametrosIniciales_6g()
+        
+    Tolerancia = Cells(14, 45).Value
+    maxIteracion = Cells(11, 45).Value
+          
+    V1 = Cells(11, 40).Value
+    V2 = Cells(12, 40).Value
+    V3 = Cells(13, 40).Value
+    V4 = Cells(14, 40).Value
+    V5 = Cells(15, 40).Value
+    V6 = Cells(16, 40).Value
+    Fila = 18
+
+End Sub
+Sub gaussseidel6g_AR()
+    nIteracion = nIteracion + 1
+    
+    Vs1 = (Cells(4, 45).Value - Cells(4, 40).Value * V2 - Cells(4, 41).Value * V3 - Cells(4, 42).Value * V4 - Cells(4, 43).Value * V5 - Cells(4, 45).Value * V6) / Cells(4, 39).Value
+    Vs2 = (Cells(5, 45).Value - Cells(5, 39).Value * Vs1 - Cells(5, 41).Value * V3 - Cells(5, 42).Value * V4 - Cells(5, 43).Value * V5 - Cells(5, 44).Value * V6) / Cells(5, 40).Value
+    Vs3 = (Cells(6, 45).Value - Cells(6, 39).Value * Vs1 - Cells(6, 40).Value * Vs2 - Cells(6, 42).Value * V4 - Cells(6, 43).Value * V5 - Cells(6, 44).Value * V6) / Cells(6, 41).Value
+    Vs4 = (Cells(7, 45).Value - Cells(7, 39).Value * Vs1 - Cells(7, 40).Value * Vs2 - Cells(7, 41).Value * Vs3 - Cells(7, 43).Value * V5 - Cells(7, 44).Value * V6) / Cells(7, 42).Value
+    Vs5 = (Cells(8, 45).Value - Cells(8, 39).Value * Vs1 - Cells(8, 40).Value * Vs2 - Cells(8, 41).Value * Vs3 - Cells(8, 42).Value * Vs4 - Cells(8, 44).Value * V6) / Cells(8, 43).Value
+    Vs6 = (Cells(9, 45).Value - Cells(9, 39).Value * Vs1 - Cells(9, 40).Value * Vs2 - Cells(9, 41).Value * Vs3 - Cells(9, 42).Value * Vs4 - Cells(9, 43).Value * Vs5) / Cells(9, 44).Value
+    
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+    E4 = Abs(Vs4 - V4)
+    E5 = Abs(Vs5 - V5)
+    E6 = Abs(Vs6 - V6)
+      
+    If E1 >= E2 And E1 >= E3 And E1 >= E4 And E1 >= E5 And E1 >= E6 Then
+                   Error = E1
+    End If
+            If E2 >= E1 And E2 >= E3 And E2 >= E4 And E2 >= E5 And E2 >= E6 Then
+                Error = E2
+            End If
+                   If E3 >= E1 And E3 >= E2 And E3 >= E4 And E3 >= E5 And E3 >= E6 Then
+                      Error = E3
+                   End If
+                          If E4 >= E1 And E4 >= E2 And E4 >= E3 And E4 >= E5 And E4 >= E6 Then
+                              Error = E4
+                          End If
+                                If E5 >= E1 And E5 >= E2 And E5 >= E3 And E5 >= E4 And E5 >= E6 Then
+                                    Error = E5
+                                End If
+                                
+                                      If E6 >= E1 And E6 >= E2 And E6 >= E3 And E6 >= E4 And E6 >= E5 Then
+                                            Error = E6
+                                      End If
+        
+    Cells(Fila + nIteracion, 36).Value = nIteracion
+    Cells(Fila + nIteracion, 37).Value = Vs1
+    Cells(Fila + nIteracion, 38).Value = Vs2
+    Cells(Fila + nIteracion, 39).Value = Vs3
+    Cells(Fila + nIteracion, 40).Value = Vs4
+    Cells(Fila + nIteracion, 41).Value = Vs5
+    Cells(Fila + nIteracion, 42).Value = Vs6
+    Cells(Fila + nIteracion, 43).Value = E1
+    Cells(Fila + nIteracion, 44).Value = E2
+    Cells(Fila + nIteracion, 45).Value = E3
+    Cells(Fila + nIteracion, 46).Value = E4
+    Cells(Fila + nIteracion, 47).Value = E5
+    Cells(Fila + nIteracion, 48).Value = E6
+    Cells(Fila + nIteracion, 49).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            V4 = Vs4
+            V5 = Vs5
+            V6 = Vs6
+            gaussseidel6g_AR
+        Else
+            Cells(Fila + nIteracion + 2, 37).Value = "El sistema no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 3, 37).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2 & " y X3 = " & Vs3 & ","
+        Cells(Fila + nIteracion + 4, 40).Value = " X4 = " & Vs4 & ", X5 = " & Vs5 & "y X6=" & Vs6 & "."
+        
+    End If
+End Sub
+Sub Principalgaussseidel_6g()
+    Range("AJ19:AW119").Value = ""
+    ParametrosIniciales_6g
+    nIteracion = 0
+    gaussseidel6g_AR
+End Sub
+Sub limpiar_6g()
+    Range("AJ19:AW119").Clear
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Hoja16.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Hoja16'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Hoja16"
+Attribute VB_Base = "0{00020820-0000-0000-C000-000000000046}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = True
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = True
+Public V1, V2, V3, Vs1, Vs2, Vs3, Error As Double
+Public Tolerancia, E1, E2, E3 As Double
+Public maxIteracion, nIteracion, Fila As Integer
+Public Formula As String
+Const Pi As Double = 3.14159265358979
+
+Private Sub ParametrosIniciales()
+    
+    Tolerancia = Cells(8, 7).Value
+    maxIteracion = Cells(7, 7).Value
+    
+    V1 = Cells(6, 3).Value
+    V2 = Cells(7, 3).Value
+    If Cells(8, 3).Value <> "" Then
+        V3 = Cells(8, 3).Value
+    Else
+        V3 = 0
+    End If
+    
+    Fila = 10
+    
+End Sub
+
+Private Function f(ByVal x1 As Double, ByVal x2 As Double, ByVal X3 As Double, ByVal i As Integer) As Double
+    ' Funcion para evaluar la ecuacion analizada
+    Dim Ecuacion As String
+    Dim FilaEc As Integer
+    
+    FilaEc = 1 + i
+
+    Ecuacion = Cells(FilaEc, 3).Value
+    
+    Formula = Replace(Ecuacion, "x1", x1)
+    Formula = Replace(Formula, "x2", x2)
+    Formula = Replace(Formula, "x3", X3)
+    Formula = Replace(Formula, "Pi", Pi)
+    
+    Formula = Replace(Formula, " ", "")
+    Formula = Replace(Formula, "--", "+")
+    Formula = Replace(Formula, "+-", "-")
+    Formula = Replace(Formula, "-+", "-")
+    
+    f = Evaluate(Formula)
+End Function
+
+Sub PuntoFijoNL()
+    nIteracion = nIteracion + 1
+    
+    
+    Vs1 = f(V1, V2, V3, 1)
+    Vs2 = f(V1, V2, V3, 2)
+    If Cells(8, 3).Value <> "" Then Vs3 = f(V1, V2, V3, 3)
+        
+    E1 = Abs(Vs1 - V1)
+    E2 = Abs(Vs2 - V2)
+    E3 = Abs(Vs3 - V3)
+      
+      
+    If E1 >= E2 Then
+        If E2 >= E3 Then
+            Error = E1
+        Else
+            If E1 >= E3 Then
+                Error = E1
+            Else
+                Error = E3
+            End If
+        End If
+    Else
+        If E2 >= E3 Then
+            If E1 >= E3 Then
+                Error = E2
+            Else
+                Error = E2
+            End If
+        Else
+            Error = E3
+        End If
+    End If
+   Cells(11, 2).Value = 0
+   Cells(11, 3).Value = Cells(6, 3).Value
+   Cells(11, 4).Value = Cells(7, 3).Value
+   If Cells(8, 3).Value <> "" Then
+   Cells(11, 5).Value = Cells(8, 3).Value
+   End If
+   Cells(11, 6).Value = "---"
+   Cells(11, 7).Value = "---"
+   Cells(11, 8).Value = "---"
+   Cells(11, 9).Value = "---"
+    Cells(Fila + nIteracion + 1, 2).Value = nIteracion
+    Cells(Fila + nIteracion + 1, 3).Value = Vs1
+    Cells(Fila + nIteracion + 1, 4).Value = Vs2
+    Cells(Fila + nIteracion + 1, 6).Value = E1
+    Cells(Fila + nIteracion + 1, 7).Value = E2
+    
+    If Cells(8, 3).Value <> "" Then
+        Cells(Fila + nIteracion + 1, 5).Value = Vs3
+        Cells(Fila + nIteracion + 1, 8).Value = E3
+    Else
+        Cells(Fila + nIteracion + 1, 5).Value = "'---"
+        Cells(Fila + nIteracion + 1, 8).Value = "'---"
+    End If
+    
+    Cells(Fila + nIteracion + 1, 9).Value = Error
+    
+    If Error > Tolerancia Then
+        If nIteracion < maxIteracion Then
+            V1 = Vs1
+            V2 = Vs2
+            V3 = Vs3
+            PuntoFijoNL
+        Else
+            Cells(Fila + nIteracion + 3, 2).Value = "La ecuacion no converge en las iteraciones solicitadas (" & maxIteracion & ")"
+        End If
+    Else
+        Cells(Fila + nIteracion + 3, 2).Value = "La solucion se encontro en la " & nIteracion & " iteracion, con un valor de: X1 = " & Vs1 & ", X2 = " & Vs2
+        If Cells(8, 3).Value <> "" Then Cells(Fila + nIteracion + 3, 2).Value = Cells(Fila + nIteracion + 3, 2).Value & " y X3 = " & Vs3 & "."
+    End If
+End Sub
+
+Sub PrincipalPuntoFijoNL()
+    Range("B13:I113").Value = ""
+    ParametrosIniciales
+    nIteracion = 0
+    PuntoFijoNL
+End Sub
+Sub limpiar_PFNL()
+    Range("B11:I78").Clear
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Manual_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Manual_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "Manual_AR"
+Sub manual()
+   Sheets("Manual").Select
+   End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO diferencias_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/diferencias_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "diferencias_AR"
+Public x0, x1, x2, X3, x4, Pox, Pox1 As Double
+Public fx0, fx1, fx2, fx3, fx4 As Double
+Public f1, f2, f3, f4, f5, f6, f7, f8, f9, f10 As Double
+
+Public hacer1 As Boolean
+
+Private Sub ParametrosIniciales()
+    Dim i, dai As Integer
+    
+    
+    dai = Cells(4, 6).Value
+    
+    If Cells(3, 6).Value = 2 Then
+    
+    x0 = Cells(8, 3).Value
+    x1 = Cells(8, 4).Value
+    fx0 = Cells(9, 3).Value
+    fx1 = Cells(9, 4).Value
+    End If
+    
+    If Cells(3, 6).Value = 3 Then
+    
+    x0 = Cells(8, 3).Value
+    x1 = Cells(8, 4).Value
+    x2 = Cells(8, 5).Value
+    fx0 = Cells(9, 3).Value
+    fx1 = Cells(9, 4).Value
+    fx2 = Cells(9, 5).Value
+    End If
+    
+    If Cells(3, 6).Value = 4 Then
+    
+    x0 = Cells(8, 3).Value
+    x1 = Cells(8, 4).Value
+    x2 = Cells(8, 5).Value
+    X3 = Cells(8, 6).Value
+    fx0 = Cells(9, 3).Value
+    fx1 = Cells(9, 4).Value
+    fx2 = Cells(9, 5).Value
+    fx3 = Cells(9, 6).Value
+    End If
+    
+    If Cells(3, 6).Value = 5 Then
+    
+    x0 = Cells(8, 3).Value
+    x1 = Cells(8, 4).Value
+    x2 = Cells(8, 5).Value
+    X3 = Cells(8, 6).Value
+    x4 = Cells(8, 7).Value
+    fx0 = Cells(9, 3).Value
+    fx1 = Cells(9, 4).Value
+    fx2 = Cells(9, 5).Value
+    fx3 = Cells(9, 6).Value
+    fx4 = Cells(9, 7).Value
+    End If
+    
+     
+End Sub
+
+Sub DiferenciasDivididas()
+
+
+    If Cells(3, 6).Value = 2 Then
+    
+    f1 = (fx1 - fx0) / (x1 - x0)
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(15, 4).Value = f1
+    End If
+    
+    If Cells(3, 6).Value = 3 Then
+    
+    f1 = (fx1 - fx0) / (x1 - x0)
+    f2 = (fx2 - fx1) / (x2 - x1)
+    f5 = (f2 - f1) / (x2 - x0)
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(16, 2).Value = x2
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(16, 3).Value = fx2
+    Cells(15, 4).Value = f1
+    Cells(16, 4).Value = f2
+    Cells(16, 5).Value = f5
+    End If
+    
+    If Cells(3, 6).Value = 4 Then
+    
+    f1 = (fx1 - fx0) / (x1 - x0)
+    f2 = (fx2 - fx1) / (x2 - x1)
+    f3 = (fx3 - fx2) / (X3 - x2)
+    
+    f5 = (f2 - f1) / (x2 - x0)
+    f6 = (f3 - f2) / (X3 - x1)
+    f8 = (f6 - f5) / (X3 - x0)
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(16, 2).Value = x2
+    Cells(17, 2).Value = X3
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(16, 3).Value = fx2
+    Cells(17, 3).Value = fx3
+    Cells(15, 4).Value = f1
+    Cells(16, 4).Value = f2
+    Cells(17, 4).Value = f3
+    Cells(16, 5).Value = f5
+    Cells(17, 5).Value = f6
+    Cells(17, 6).Value = f8
+    End If
+    
+    If Cells(3, 6).Value = 5 Then
+    
+    f1 = (fx1 - fx0) / (x1 - x0)
+    f2 = (fx2 - fx1) / (x2 - x1)
+    f3 = (fx3 - fx2) / (X3 - x2)
+    f4 = (fx4 - fx3) / (x4 - X3)
+    f5 = (f2 - f1) / (x2 - x0)
+    f6 = (f3 - f2) / (X3 - x1)
+    f7 = (f4 - f3) / (x4 - x2)
+    f8 = (f6 - f5) / (X3 - x0)
+    f9 = (f7 - f6) / (x4 - x1)
+    f10 = (f9 - f8) / (x4 - x0)
+    Cells(14, 2).Value = x0
+    Cells(15, 2).Value = x1
+    Cells(16, 2).Value = x2
+    Cells(17, 2).Value = X3
+    Cells(18, 2).Value = x4
+    Cells(14, 3).Value = fx0
+    Cells(15, 3).Value = fx1
+    Cells(16, 3).Value = fx2
+    Cells(17, 3).Value = fx3
+    Cells(18, 3).Value = fx4
+    Cells(15, 4).Value = f1
+    Cells(16, 4).Value = f2
+    Cells(17, 4).Value = f3
+    Cells(18, 4).Value = f4
+    Cells(16, 5).Value = f5
+    Cells(17, 5).Value = f6
+    Cells(18, 5).Value = f7
+    Cells(17, 6).Value = f8
+    Cells(18, 6).Value = f9
+    Cells(18, 7).Value = f10
+    End If
+
+       
+    EscribeSolucion (Valor)
+End Sub
+
+Sub EscribeSolucion(ByVal Progresivas As String)
+    Dim Solucion1, Solucionr As String
+    Dim ValorSolucion, Valorsolucionr As String
+    
+dai = Cells(4, 6).Value
+   
+    If Cells(3, 6).Value = 2 Then
+    
+        Solucion1 = "P(x) = " & fx0 & " + " & f1 & "(x - " & x0 & ") "
+        ValorSolucion1 = fx0 & " + " & f1 & "*(" & dai & " - " & x0 & ") "
+        Solucionr = "P(x) = " & fx1 & " + " & f1 & "(x - " & x1 & ") "
+        Valorsolucionr1 = fx1 & " + " & f1 & "*(" & dai & " - " & x1 & ") "
+        
+        Pox = Evaluate(ValorSolucion1)
+        Pox1 = Evaluate(ValorSolucion1)
+   
+    Cells(25, 2).Value = Solucion1
+    Cells(26, 2).Value = "P(" & dai & ") = " & Pox1
+       
+    
+    Cells(21, 2).Value = Solucionr
+    Cells(22, 2).Value = "P(" & dai & ") = " & Pox
+    End If
+        
+    If Cells(3, 6).Value = 3 Then
+        Solucion1 = "P(x) = " & fx0 & " + " & f1 & "(x - " & x0 & ") + " & f5 & "(x - " & x0 & ")(x - " & x1 & ") "
+        ValorSolucion1 = fx0 & " + " & f1 & "*(" & dai & " - " & x0 & ") + " & f5 & "*(" & dai & " - " & x0 & ")*(" & dai & " - " & x1 & ")"
+        Solucionr = "P(x) = " & fx2 & " + " & f2 & "(x - " & x2 & ") + " & f5 & "(x - " & x2 & ")(x - " & x1 & ") "
+        Valorsolucionr1 = fx0 & " + " & f2 & "*(" & dai & " - " & x2 & ") + " & f5 & "*(" & dai & " - " & x2 & ")*(" & dai & " - " & x1 & ")"
+    
+    Pox = Evaluate(ValorSolucion1)
+        Pox1 = Evaluate(ValorSolucion1)
+   
+    Cells(25, 2).Value = Solucion1
+    Cells(26, 2).Value = "P(" & dai & ") = " & Pox1
+       
+    
+    Cells(21, 2).Value = Solucionr
+    Cells(22, 2).Value = "P(" & dai & ") = " & Pox
+    
+       
+    
+    End If
+        
+    If Cells(3, 6).Value = 4 Then
+        Solucion1 = "P(x) = " & fx0 & " + " & f1 & "(x - " & x0 & ") + " & f5 & "(x - " & x0 & ")(x - " & x1 & ") + " & f8 & "(x - " & x0 & ")(x - " & x1 & ")(x - " & x2 & ")"
+        ValorSolucion1 = fx0 & " + " & f1 & "*(" & dai & " - " & x0 & ") + " & f5 & "*(" & dai & " - " & x0 & ")*(" & dai & " - " & x1 & ") + " & f8 & "*(" & dai & " - " & x0 & ")*(" & dai & " - " & x1 & ")*(" & dai & " - " & x2 & ")"
+        Solucionr = "P(x) = " & fx3 & " + " & f3 & "(x - " & X3 & ") + " & f6 & "(x - " & X3 & ")(x - " & x2 & ") + " & f8 & "(x - " & X3 & ")(x - " & x2 & ")(x - " & x1 & ")"
+        Valorsolucionr1 = fx3 & " + " & f3 & "*(" & dai & " - " & X3 & ") + " & f6 & "*(" & dai & " - " & X3 & ")*(" & dai & " - " & x2 & ") + " & f8 & "*(" & dai & " - " & X3 & ")*(" & dai & " - " & x2 & ")*(" & dai & " - " & x1 & ")"
+    
+   Pox = Evaluate(ValorSolucion1)
+        Pox1 = Evaluate(ValorSolucion1)
+   
+    Cells(25, 2).Value = Solucion1
+    Cells(26, 2).Value = "P(" & dai & ") = " & Pox1
+       
+    
+    Cells(21, 2).Value = Solucionr
+    Cells(22, 2).Value = "P(" & dai & ") = " & Pox
+     
+    
+    End If
+        
+    If Cells(3, 6).Value = 5 Then
+       Solucion1 = "P(x) = " & fx0 & " + " & f1 & "(x - " & x0 & ") + " & f5 & "(x - " & x0 & ")(x - " & x1 & ") + " & f8 & "(x - " & x0 & ")(x - " & x1 & ")(x - " & x2 & ")+ " & f10 & "(x - " & x0 & ")(x - " & x1 & ")(x - " & x2 & ")(x - " & X3 & ")"
+       ValorSolucion1 = fx0 & " + " & f1 & "*(" & dai & " - " & x0 & ") + " & f5 & "*(" & dai & " - " & x0 & ")*(" & dai & " - " & x1 & ") + " & f8 & "*(" & dai & " - " & x0 & ")*(" & dai & " - " & x1 & ")*(" & dai & " - " & x2 & ")+ " & f10 & "*(" & dai & " - " & x0 & ")*(" & dai & " - " & x1 & ")*(" & dai & " - " & x2 & ")*(" & dai & " - " & X3 & ")"
+       Solucionr = "P(x) = " & fx4 & " + " & f4 & "(x - " & x4 & ") + " & f7 & "(x - " & x4 & ")(x - " & X3 & ") + " & f9 & "(x - " & x4 & ")(x - " & X3 & ")(x - " & x2 & ")+ " & f10 & "(x - " & x4 & ")(x - " & X3 & ")(x - " & x2 & ")(x - " & x1 & ")"
+       Valorsolucionr1 = fx4 & " + " & f4 & "*(" & dai & " - " & x4 & ") + " & f7 & "*(" & dai & " - " & x4 & ")*(" & dai & " - " & X3 & ") + " & f9 & "*(" & dai & " - " & x4 & ")*(" & dai & " - " & X3 & ")*(" & dai & " - " & x2 & ")+ " & f10 & "*(" & dai & " - " & x4 & ")*(" & dai & " - " & X3 & ")*(" & dai & " - " & x2 & ")*(" & dai & " - " & x1 & ")"
+    
+    Pox = Evaluate(ValorSolucion1)
+        Pox1 = Evaluate(ValorSolucion1)
+   
+    Cells(25, 2).Value = Solucion1
+    Cells(26, 2).Value = "P(" & dai & ") = " & Pox1
+       
+    
+    Cells(21, 2).Value = Solucionr
+    Cells(22, 2).Value = "P(" & dai & ") = " & Pox
+    
+    
+    End If
+    
+   
+    End Sub
+
+Sub PrincipalDiferenciasDivididas()
+    Range("B14:g18").Value = ""
+    ParametrosIniciales
+    DiferenciasDivididas
+End Sub
+Sub papapapapapapappa()
+PrincipalDiferenciasDivididas
+End Sub
+
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO acerca_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/acerca_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "acerca_AR"
+Sub acerca()
+MsgBox "IDEA ORIGINAL:" & vbCrLf & "MSC. ING. RENALDO GIRON ALVARADO" & vbCrLf & "Programa realizado por:" & vbCrLf & " * Renaldo Giron Alvarado y" & vbCrLf & " * Allan Elder Javier Rosales Calderon" & vbCrLf & "Universidad de San Carlos de Guatemala (USAC)" & vbCrLf & "Facultad de Ingenieria 2010" & vbCrLf & "Correo Electronico: matematicaaplicada3@gmail.com", vbInformation, "METODOS NUMERICOS/MATEMATICA APLICADA 3"
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO UserForm2.frm 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "UserForm2"
+Attribute VB_Base = "0{F4D03F90-8F14-44E6-AE48-03AF4FE7AD94}{66545D32-4B9B-4573-B4F3-C9C159382283}"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Attribute VB_TemplateDerived = False
+Attribute VB_Customizable = False
+
+-------------------------------------------------------------------------------
+VBA MACRO lagrange_AR.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/lagrange_AR'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attribute VB_Name = "lagrange_AR"
+Public maxN, i As Integer
+Dim Po As Double
+
+Private Sub ParametrosIniciales()
+    maxN = Cells(3, 4).Value
+    Po = Cells(4, 4).Value
+End Sub
+
+
+Function fXn(ByVal nfx As Integer)
+    fXn = Cells(9, 3 + nfx).Value
+End Function
+
+Function Xn(ByVal nx As Integer)
+    Xn = Cells(8, 3 + nx).Value
+End Function
+
+Function Lnx(ByVal k As Integer, ByVal n As Integer) As String
+    Dim FuncionLn, NumeradorLn, DenominadorLn As String
+    Dim i As Integer 'Definir indice de cada X
+    
+    NumeradorLn = ""
+    DenominadorLn = ""
+    
+    For i = 0 To n
+        If i <> k Then
+            NumeradorLn = NumeradorLn & "(x - x" & i & ")"
+            DenominadorLn = DenominadorLn & "(x" & k & " - x" & i & ")"
+            If i < n Then
+                NumeradorLn = NumeradorLn & "*"
+                DenominadorLn = DenominadorLn & "*"
+            End If
+        End If
+    Next
+    
+    FuncionLn = "(" & NumeradorLn & ")/(" & DenominadorLn & ")"
+    
+    Lnx = FuncionLn
+    
+End Function
+
+Function Pk(ByVal kP As Integer)
+    Dim Pactual As String
+    
+    Dim nP As Integer
+    
+    nP = maxN
+    
+    Pactual = "(" & Lnx(kP, nP) & "*" & fXn(kP) & ")"
+    
+    Pk = Pactual
+End Function
+Function Pka(ByVal kP As Integer)
+    Dim Pactual As String
+    
+    Dim nP As Integer
+    
+    nP = maxN
+    
+    Pactual = "(" & Lnx(kP, nP) & "*" & fXn(kP) & ")"
+    
+    Pka = Pactual
+End Function
+Private Function f(ByVal X As Double) As Double
+    Dim Ecuacion As String
+    Ecuacion = Cells(1, 1).Value
+    Formula = Replace(Ecuacion, "x", X)
+    Formula = Replace(Formula, " ", "")
+    
+    f = Evaluate(Formula)
+End Function
+
+Sub Lagrange()
+    Dim kL, nL, MM, i As Integer
+    Dim Polinomio, mmm, XsubN As String
+    Dim Aproximacion, Ap As Double
+    
+    Dim kLa, nLa As Integer
+    Dim Polinomioa, XsubNa As String
+    Dim Aproximaciona, Apa As Double
+    
+    If Cells(3, 4).Value = 1 Then
+    Cells(17, 3).Value = (((Cells(4, 4) - Cells(8, 4))) / ((Cells(8, 3) - Cells(8, 4))) * Cells(9, 3)) + (((Cells(4, 4) - Cells(8, 3))) / ((Cells(8, 4) - Cells(8, 3))) * Cells(9, 4))
+    End If
+         If Cells(3, 4).Value = 2 Then
+        Cells(17, 3).Value = (((Cells(4, 4) - Cells(8, 4)) * (Cells(4, 4) - Cells(8, 5))) / ((Cells(8, 3) - Cells(8, 4)) * (Cells(8, 3) - Cells(8, 5))) * Cells(9, 3)) + (((Cells(4, 4) - Cells(8, 3)) * (Cells(4, 4) - Cells(8, 5))) / ((Cells(8, 4) - Cells(8, 3)) * (Cells(8, 4) - Cells(8, 5))) * Cells(9, 4)) + (((Cells(4, 4) - Cells(8, 3)) * (Cells(4, 4) - Cells(8, 4))) / ((Cells(8, 5) - Cells(8, 3)) * (Cells(8, 5) - Cells(8, 4))) * Cells(9, 5))
+         End If
+            If Cells(3, 4).Value = 3 Then
+        
+              Cells(17, 3).Value = (((Cells(4, 4) - Cells(8, 4)) * (Cells(4, 4) - Cells(8, 5)) * (Cells(4, 4) - Cells(8, 6))) / ((Cells(8, 3) - Cells(8, 4)) * (Cells(8, 3) - Cells(8, 5)) * (Cells(8, 3) - Cells(8, 6))) * Cells(9, 3)) + (((Cells(4, 4) - Cells(8, 3)) * (Cells(4, 4) - Cells(8, 5)) * (Cells(4, 4) - Cells(8, 6))) / ((Cells(8, 4) - Cells(8, 3)) * (Cells(8, 4) - Cells(8, 5)) * (Cells(8, 4) - Cells(8, 6))) * Cells(9, 4)) + (((Cells(4, 4) - Cells(8, 3)) * (Cells(4, 4) - Cells(8, 4)) * (Cells(4, 4) - Cells(8, 6))) / ((Cells(8, 5) - Cells(8, 3)) * (Cells(8, 5) - Cells(8, 4)) * (Cells(8, 5) - Cells(8, 6))) * Cells(9, 5)) + (((Cells(4, 4) - Cells(8, 3)) * (Cells(4, 4) - Cells(8, 4)) * (Cells(4, 4) - Cells(8, 5))) / ((Cells(8, 6) - Cells(8, 3)) * (Cells(8, 6) - Cells(8, 4)) * (Cells(8, 6) - Cells(8, 5))) * Cells(9, 6))
+             End If
+    
+    
+    
+    Polinomio = ""
+    
+    For kL = 0 To maxN
+        Polinomio = Polinomio & Pk(kL)
+        If kL < maxN Then Polinomio = Polinomio & " + "
+    
+    Next
+    
+    Polinomio = Replace(Polinomio, "*)", ")")
+    Cells(11, 3).Value = "P(x) = " & Polinomio
+    'Cells(1, 1).Value = Polinomio
+    For nL = 0 To maxN
+        XsubN = "x" & nL
+        Polinomio = Replace(Polinomio, XsubN, Xn(nL))
+    Next
+        'Cells(1, 1).Value = Replace(Polinomio, "x", 0)
+
+    Cells(13, 3).Value = "P(x) = " & Polinomio
+    
+    Polinomio = Replace(Polinomio, "x", Po) ' Polinomio con todos los valores sustituidos
+    
+    Cells(15, 3).Value = "P(x) = " & Polinomio
+ 
+    Aproximacion = Evaluate(Polinomio)
+    
+       
+    
+    For i = 0 To 4
+    
+       For kL = 0 To maxN
+        Polinomio = Polinomioa & Pk(kL)
+        If kL < maxN Then Polinomio = Polinomio & " + "
+       Next
+    
+    Polinomio = Replace(Polinomio, "*)", ")")
+    'Cells(11, 3).Value = "P(x) = " & Polinomioa
+    'Cells(1, 1).Value = Polinomioa
+    For nL = 0 To maxN
+        XsubN = "x" & nL
+        Polinomio = Replace(Polinomio, XsubN, Xn(nL))
+    Next
+        'Cells(1, 1).Value = Replace(Polinomioa, "x", 0)
+
+    'Cells(13, 3).Value = "P(x) = " & Polinomioa
+    
+    Polinomio = Replace(Polinomio, "x", i)
+    ' Polinomio con todos los valores sustituidos
+    
+    'Cells(15, 3).Value = "P(x) = " & Polinomioa
+ 
+    Aproximacion = Evaluate(Polinomio)
+   Next
+End Sub
+
+Sub PrincipalLagrange()
+    Range("C11:C13").Value = ""
+    ParametrosIniciales
+    Lagrange
+End Sub
+
+
+
+

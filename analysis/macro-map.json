@@ -1,0 +1,1367 @@
+{
+  "source": "/Users/chofito/universe/chofito/excel-metodos-numericos/PLANTILLA DE METODOS NUMERICOS_office 2007.xlsm",
+  "generatedAt": "2026-05-27T03:58:46.449590+00:00",
+  "macros": [
+    {
+      "procedure": "acerca",
+      "declaredModule": "",
+      "implementationModules": [
+        "acerca_AR"
+      ],
+      "sheets": [
+        "Biseccion",
+        "Caratula",
+        "Lagrange",
+        "Muller",
+        "Neville",
+        "Newton",
+        "Posicion Falsa",
+        "Punto Fijo",
+        "Punto Fijo NL",
+        "Regresivas",
+        "Secante",
+        "Steffenssen"
+      ],
+      "references": [
+        {
+          "sheet": "Biseccion",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "2 Imagen",
+          "source": "xl/drawings/drawing3.xml"
+        },
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing2.xml"
+        },
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "3 Imagen",
+          "source": "xl/drawings/drawing2.xml"
+        },
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "sheet": "Lagrange",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "2 Imagen",
+          "source": "xl/drawings/drawing10.xml"
+        },
+        {
+          "sheet": "Muller",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing9.xml"
+        },
+        {
+          "sheet": "Neville",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing11.xml"
+        },
+        {
+          "sheet": "Newton",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing8.xml"
+        },
+        {
+          "sheet": "Posicion Falsa",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing6.xml"
+        },
+        {
+          "sheet": "Punto Fijo",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "19 Imagen",
+          "source": "xl/drawings/drawing4.xml"
+        },
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing15.xml"
+        },
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "2 Imagen",
+          "source": "xl/drawings/drawing15.xml"
+        },
+        {
+          "sheet": "Regresivas",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing12.xml"
+        },
+        {
+          "sheet": "Secante",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "5 Imagen",
+          "source": "xl/drawings/drawing5.xml"
+        },
+        {
+          "sheet": "Steffenssen",
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "declaredModule": "",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing7.xml"
+        }
+      ]
+    },
+    {
+      "procedure": "inicio_biseccion",
+      "declaredModule": "",
+      "implementationModules": [
+        "biseccion_AR"
+      ],
+      "sheets": [
+        "Biseccion"
+      ],
+      "references": [
+        {
+          "sheet": "Biseccion",
+          "raw": "[0]!inicio_biseccion",
+          "qualified": "inicio_biseccion",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing3.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "inicio_newton",
+      "declaredModule": "",
+      "implementationModules": [
+        "newton_AR"
+      ],
+      "sheets": [
+        "Newton"
+      ],
+      "references": [
+        {
+          "sheet": "Newton",
+          "raw": "[0]!inicio_newton",
+          "qualified": "inicio_newton",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing8.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "inicio_posicionfalsa",
+      "declaredModule": "",
+      "implementationModules": [
+        "posicionfalsa_AR"
+      ],
+      "sheets": [
+        "Posicion Falsa"
+      ],
+      "references": [
+        {
+          "sheet": "Posicion Falsa",
+          "raw": "[0]!inicio_posicionfalsa",
+          "qualified": "inicio_posicionfalsa",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing6.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "inicio_puntofijo",
+      "declaredModule": "",
+      "implementationModules": [
+        "puntofijo_AR"
+      ],
+      "sheets": [
+        "Punto Fijo"
+      ],
+      "references": [
+        {
+          "sheet": "Punto Fijo",
+          "raw": "[0]!inicio_puntofijo",
+          "qualified": "inicio_puntofijo",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing4.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "inicio_secante",
+      "declaredModule": "",
+      "implementationModules": [
+        "secante_AR"
+      ],
+      "sheets": [
+        "Secante"
+      ],
+      "references": [
+        {
+          "sheet": "Secante",
+          "raw": "[0]!inicio_secante",
+          "qualified": "inicio_secante",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing5.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "inicio_steffenssen",
+      "declaredModule": "",
+      "implementationModules": [
+        "steffenssen_AR"
+      ],
+      "sheets": [
+        "Steffenssen"
+      ],
+      "references": [
+        {
+          "sheet": "Steffenssen",
+          "raw": "[0]!inicio_steffenssen",
+          "qualified": "inicio_steffenssen",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing7.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_biseccion",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_biseccion",
+          "qualified": "ir_biseccion",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_gauss",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_gauss",
+          "qualified": "ir_gauss",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_indice",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Biseccion",
+        "Gauss Seidel",
+        "Jacobi",
+        "Lagrange",
+        "Manual",
+        "Muller",
+        "Neville",
+        "Newton",
+        "Posicion Falsa",
+        "Punto Fijo",
+        "Punto Fijo NL",
+        "Regresivas",
+        "Secante",
+        "Steffenssen"
+      ],
+      "references": [
+        {
+          "sheet": "Biseccion",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing3.vml"
+        },
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "sheet": "Lagrange",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing10.vml"
+        },
+        {
+          "sheet": "Manual",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing1.vml"
+        },
+        {
+          "sheet": "Muller",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing9.vml"
+        },
+        {
+          "sheet": "Neville",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing11.vml"
+        },
+        {
+          "sheet": "Newton",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing8.vml"
+        },
+        {
+          "sheet": "Posicion Falsa",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing6.vml"
+        },
+        {
+          "sheet": "Punto Fijo",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing4.vml"
+        },
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "sheet": "Regresivas",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing12.vml"
+        },
+        {
+          "sheet": "Secante",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing5.vml"
+        },
+        {
+          "sheet": "Steffenssen",
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing7.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_jacobi",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_jacobi",
+          "qualified": "ir_jacobi",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_lagrange",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_lagrange",
+          "qualified": "ir_lagrange",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_muller",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_muller",
+          "qualified": "ir_muller",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_neville",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_neville",
+          "qualified": "ir_neville",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_Newton",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_Newton",
+          "qualified": "ir_Newton",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_posicion",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_posicion",
+          "qualified": "ir_posicion",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_punto",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_punto",
+          "qualified": "ir_punto",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_puntoNL",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_puntoNL",
+          "qualified": "ir_puntoNL",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_reg",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_reg",
+          "qualified": "ir_reg",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_secante",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_secante",
+          "qualified": "ir_secante",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "ir_steffenssen",
+      "declaredModule": "",
+      "implementationModules": [
+        "indice_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!ir_steffenssen",
+          "qualified": "ir_steffenssen",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar",
+      "declaredModule": "biseccion_AR",
+      "implementationModules": [
+        "Hoja14",
+        "Hoja15",
+        "biseccion_AR",
+        "newton_AR",
+        "posicionfalsa_AR",
+        "puntofijo_AR",
+        "secante_AR",
+        "steffenssen_AR"
+      ],
+      "sheets": [
+        "Biseccion",
+        "Gauss Seidel",
+        "Jacobi",
+        "Newton",
+        "Posicion Falsa",
+        "Punto Fijo",
+        "Secante",
+        "Steffenssen"
+      ],
+      "references": [
+        {
+          "sheet": "Biseccion",
+          "raw": "[0]!biseccion_AR.limpiar",
+          "qualified": "biseccion_AR.limpiar",
+          "declaredModule": "biseccion_AR",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing3.vml"
+        },
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.limpiar",
+          "qualified": "Hoja15.limpiar",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.limpiar",
+          "qualified": "Hoja14.limpiar",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "sheet": "Newton",
+          "raw": "[0]!newton_AR.limpiar",
+          "qualified": "newton_AR.limpiar",
+          "declaredModule": "newton_AR",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing8.vml"
+        },
+        {
+          "sheet": "Posicion Falsa",
+          "raw": "[0]!posicionfalsa_AR.limpiar",
+          "qualified": "posicionfalsa_AR.limpiar",
+          "declaredModule": "posicionfalsa_AR",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing6.vml"
+        },
+        {
+          "sheet": "Punto Fijo",
+          "raw": "[0]!puntofijo_AR.limpiar",
+          "qualified": "puntofijo_AR.limpiar",
+          "declaredModule": "puntofijo_AR",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing4.vml"
+        },
+        {
+          "sheet": "Secante",
+          "raw": "[0]!secante_AR.limpiar",
+          "qualified": "secante_AR.limpiar",
+          "declaredModule": "secante_AR",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing5.vml"
+        },
+        {
+          "sheet": "Steffenssen",
+          "raw": "[0]!steffenssen_AR.limpiar",
+          "qualified": "steffenssen_AR.limpiar",
+          "declaredModule": "steffenssen_AR",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing7.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_4",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.limpiar_4",
+          "qualified": "Hoja14.limpiar_4",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_4g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.limpiar_4g",
+          "qualified": "Hoja15.limpiar_4g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_5",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.limpiar_5",
+          "qualified": "Hoja14.limpiar_5",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_5g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.limpiar_5g",
+          "qualified": "Hoja15.limpiar_5g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_6",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.limpiar_6",
+          "qualified": "Hoja14.limpiar_6",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_6g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.limpiar_6g",
+          "qualified": "Hoja15.limpiar_6g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_muller",
+      "declaredModule": "",
+      "implementationModules": [
+        "muller_AR"
+      ],
+      "sheets": [
+        "Muller"
+      ],
+      "references": [
+        {
+          "sheet": "Muller",
+          "raw": "[0]!limpiar_muller",
+          "qualified": "limpiar_muller",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing9.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_neville",
+      "declaredModule": "Hoja9",
+      "implementationModules": [
+        "Hoja9"
+      ],
+      "sheets": [
+        "Neville"
+      ],
+      "references": [
+        {
+          "sheet": "Neville",
+          "raw": "[0]!Hoja9.limpiar_neville",
+          "qualified": "Hoja9.limpiar_neville",
+          "declaredModule": "Hoja9",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing11.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "limpiar_PFNL",
+      "declaredModule": "Hoja16",
+      "implementationModules": [
+        "Hoja16"
+      ],
+      "sheets": [
+        "Punto Fijo NL"
+      ],
+      "references": [
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!Hoja16.limpiar_PFNL",
+          "qualified": "Hoja16.limpiar_PFNL",
+          "declaredModule": "Hoja16",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "manual",
+      "declaredModule": "",
+      "implementationModules": [
+        "Manual_AR"
+      ],
+      "sheets": [
+        "Caratula"
+      ],
+      "references": [
+        {
+          "sheet": "Caratula",
+          "raw": "[0]!manual",
+          "qualified": "manual",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalDiferenciasDivididas",
+      "declaredModule": "",
+      "implementationModules": [
+        "diferencias_AR"
+      ],
+      "sheets": [
+        "Regresivas"
+      ],
+      "references": [
+        {
+          "sheet": "Regresivas",
+          "raw": "[0]!PrincipalDiferenciasDivididas",
+          "qualified": "PrincipalDiferenciasDivididas",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing12.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "Principalgaussseidel_3g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.Principalgaussseidel_3g",
+          "qualified": "Hoja15.Principalgaussseidel_3g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "Principalgaussseidel_4g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.Principalgaussseidel_4g",
+          "qualified": "Hoja15.Principalgaussseidel_4g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "Principalgaussseidel_5g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.Principalgaussseidel_5g",
+          "qualified": "Hoja15.Principalgaussseidel_5g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "Principalgaussseidel_6g",
+      "declaredModule": "Hoja15",
+      "implementationModules": [
+        "Hoja15"
+      ],
+      "sheets": [
+        "Gauss Seidel"
+      ],
+      "references": [
+        {
+          "sheet": "Gauss Seidel",
+          "raw": "[0]!Hoja15.Principalgaussseidel_6g",
+          "qualified": "Hoja15.Principalgaussseidel_6g",
+          "declaredModule": "Hoja15",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalJacobi",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.PrincipalJacobi",
+          "qualified": "Hoja14.PrincipalJacobi",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalJacobi_4",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.PrincipalJacobi_4",
+          "qualified": "Hoja14.PrincipalJacobi_4",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalJacobi_5",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.PrincipalJacobi_5",
+          "qualified": "Hoja14.PrincipalJacobi_5",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalJacobi_6",
+      "declaredModule": "Hoja14",
+      "implementationModules": [
+        "Hoja14"
+      ],
+      "sheets": [
+        "Jacobi"
+      ],
+      "references": [
+        {
+          "sheet": "Jacobi",
+          "raw": "[0]!Hoja14.PrincipalJacobi_6",
+          "qualified": "Hoja14.PrincipalJacobi_6",
+          "declaredModule": "Hoja14",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalLagrange",
+      "declaredModule": "",
+      "implementationModules": [
+        "lagrange_AR"
+      ],
+      "sheets": [
+        "Lagrange"
+      ],
+      "references": [
+        {
+          "sheet": "Lagrange",
+          "raw": "[0]!PrincipalLagrange",
+          "qualified": "PrincipalLagrange",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing10.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalMuller",
+      "declaredModule": "",
+      "implementationModules": [
+        "muller_AR"
+      ],
+      "sheets": [
+        "Muller"
+      ],
+      "references": [
+        {
+          "sheet": "Muller",
+          "raw": "[0]!PrincipalMuller",
+          "qualified": "PrincipalMuller",
+          "declaredModule": "",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing9.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalNeville",
+      "declaredModule": "Hoja9",
+      "implementationModules": [
+        "Hoja9"
+      ],
+      "sheets": [
+        "Neville"
+      ],
+      "references": [
+        {
+          "sheet": "Neville",
+          "raw": "[0]!Hoja9.PrincipalNeville",
+          "qualified": "Hoja9.PrincipalNeville",
+          "declaredModule": "Hoja9",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing11.vml"
+        }
+      ]
+    },
+    {
+      "procedure": "PrincipalPuntoFijoNL",
+      "declaredModule": "Hoja16",
+      "implementationModules": [
+        "Hoja16"
+      ],
+      "sheets": [
+        "Punto Fijo NL"
+      ],
+      "references": [
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!Hoja16.PrincipalPuntoFijoNL",
+          "qualified": "Hoja16.PrincipalPuntoFijoNL",
+          "declaredModule": "Hoja16",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "sheet": "Punto Fijo NL",
+          "raw": "[0]!Hoja16.PrincipalPuntoFijoNL",
+          "qualified": "Hoja16.PrincipalPuntoFijoNL",
+          "declaredModule": "Hoja16",
+          "objectType": "Button",
+          "objectName": "",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        }
+      ]
+    }
+  ]
+}

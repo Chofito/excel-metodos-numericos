@@ -1,0 +1,2116 @@
+{
+  "source": "/Users/chofito/universe/chofito/excel-metodos-numericos/PLANTILLA DE METODOS NUMERICOS_office 2007.xlsm",
+  "generatedAt": "2026-05-27T03:58:46.449590+00:00",
+  "sheetCount": 15,
+  "sheets": [
+    {
+      "name": "Manual",
+      "state": "visible",
+      "sheetId": "1",
+      "path": "xl/worksheets/sheet1.xml",
+      "dimension": "A1:L118",
+      "cellCount": 133,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "A1",
+          "value": "ANTES DE USAR LEER BIEN LO SIGUIENTE:"
+        },
+        {
+          "cell": "B3",
+          "value": "Manual de Usuario:"
+        },
+        {
+          "cell": "B5",
+          "value": "* Primero que nada hay que habilitar los macros de la siguiente forma:"
+        },
+        {
+          "cell": "B7",
+          "value": "Aparece un cuadro de dialogo que dice “Advertencia de Seguridad” y junto a el hay un boton de opciones, Damos click en el boton."
+        },
+        {
+          "cell": "B21",
+          "value": "Y aparecerá algo como la figura, le damos habilitar este contenido y después aceptar."
+        },
+        {
+          "cell": "B38",
+          "value": "Nos mostrara una pantalla igual a la de abajo, ahora ya esta habilitada las macros para poder usar los metodos numericos"
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing1.vml"
+        }
+      ]
+    },
+    {
+      "name": "Caratula",
+      "state": "visible",
+      "sheetId": "2",
+      "path": "xl/worksheets/sheet2.xml",
+      "dimension": "A2:V29",
+      "cellCount": 187,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "F2",
+          "value": "UNIVERSIDAD DE SAN CARLOS DE GUATEMALA"
+        },
+        {
+          "cell": "I2",
+          "value": "INDICE"
+        },
+        {
+          "cell": "F3",
+          "value": "FACULTAD DE INGENIERÍA"
+        },
+        {
+          "cell": "F4",
+          "value": "ESCUELA DE CIENCIAS"
+        },
+        {
+          "cell": "F5",
+          "value": "DEPARTAMENTO DE MATEMÁTICA"
+        },
+        {
+          "cell": "F6",
+          "value": "CURSO: MATEMATICA APLICADA 3"
+        },
+        {
+          "cell": "F7",
+          "value": "CATEDRATICO: MSC. ING. RENALDO GIRON"
+        },
+        {
+          "cell": "V8",
+          "value": -2
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_biseccion",
+          "qualified": "ir_biseccion",
+          "module": "",
+          "procedure": "ir_biseccion",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_secante",
+          "qualified": "ir_secante",
+          "module": "",
+          "procedure": "ir_secante",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_punto",
+          "qualified": "ir_punto",
+          "module": "",
+          "procedure": "ir_punto",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_posicion",
+          "qualified": "ir_posicion",
+          "module": "",
+          "procedure": "ir_posicion",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_Newton",
+          "qualified": "ir_Newton",
+          "module": "",
+          "procedure": "ir_Newton",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_steffenssen",
+          "qualified": "ir_steffenssen",
+          "module": "",
+          "procedure": "ir_steffenssen",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_muller",
+          "qualified": "ir_muller",
+          "module": "",
+          "procedure": "ir_muller",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!manual",
+          "qualified": "manual",
+          "module": "",
+          "procedure": "manual",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_lagrange",
+          "qualified": "ir_lagrange",
+          "module": "",
+          "procedure": "ir_lagrange",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_neville",
+          "qualified": "ir_neville",
+          "module": "",
+          "procedure": "ir_neville",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_reg",
+          "qualified": "ir_reg",
+          "module": "",
+          "procedure": "ir_reg",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_jacobi",
+          "qualified": "ir_jacobi",
+          "module": "",
+          "procedure": "ir_jacobi",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_gauss",
+          "qualified": "ir_gauss",
+          "module": "",
+          "procedure": "ir_gauss",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!ir_puntoNL",
+          "qualified": "ir_puntoNL",
+          "module": "",
+          "procedure": "ir_puntoNL",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing2.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing2.xml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "3 Imagen",
+          "source": "xl/drawings/drawing2.xml"
+        }
+      ]
+    },
+    {
+      "name": "Biseccion",
+      "state": "visible",
+      "sheetId": "3",
+      "path": "xl/worksheets/sheet3.xml",
+      "dimension": "A2:W110",
+      "cellCount": 1084,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "E2",
+          "value": "Funcion f(x) :"
+        },
+        {
+          "cell": "G2",
+          "value": "x^2-1"
+        },
+        {
+          "cell": "E3",
+          "value": "Punto inicial (a) :"
+        },
+        {
+          "cell": "G3",
+          "value": 0.25
+        },
+        {
+          "cell": "E4",
+          "value": "Punto final (b) :"
+        },
+        {
+          "cell": "G4",
+          "value": 1.1
+        },
+        {
+          "cell": "E5",
+          "value": "Tolerancia (tol) :"
+        },
+        {
+          "cell": "G5",
+          "value": 0.1
+        },
+        {
+          "cell": "E6",
+          "value": "Numero de Iteraciones:"
+        },
+        {
+          "cell": "G6",
+          "value": 25
+        },
+        {
+          "cell": "B8",
+          "value": "n"
+        },
+        {
+          "cell": "C8",
+          "value": "a"
+        },
+        {
+          "cell": "D8",
+          "value": "b"
+        },
+        {
+          "cell": "E8",
+          "value": "p"
+        },
+        {
+          "cell": "F8",
+          "value": "f(a)"
+        },
+        {
+          "cell": "G8",
+          "value": "f(b)"
+        },
+        {
+          "cell": "H8",
+          "value": "f(p)"
+        },
+        {
+          "cell": "I8",
+          "value": "f(a)*f(p)"
+        },
+        {
+          "cell": "J8",
+          "value": "Error"
+        },
+        {
+          "cell": "B9",
+          "value": 1
+        },
+        {
+          "cell": "C9",
+          "value": 0.25
+        },
+        {
+          "cell": "D9",
+          "value": 1.1
+        },
+        {
+          "cell": "E9",
+          "value": 0.675
+        },
+        {
+          "cell": "F9",
+          "value": -0.9375
+        },
+        {
+          "cell": "G9",
+          "value": 0.2100000000000002
+        },
+        {
+          "cell": "H9",
+          "value": -0.5443749999999999
+        },
+        {
+          "cell": "I9",
+          "value": 0.5103515624999999
+        },
+        {
+          "cell": "J9",
+          "value": 0.42500000000000004
+        },
+        {
+          "cell": "B10",
+          "value": 2
+        },
+        {
+          "cell": "C10",
+          "value": 0.675
+        },
+        {
+          "cell": "D10",
+          "value": 1.1
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!inicio_biseccion",
+          "qualified": "inicio_biseccion",
+          "module": "",
+          "procedure": "inicio_biseccion",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing3.vml"
+        },
+        {
+          "raw": "[0]!biseccion_AR.limpiar",
+          "qualified": "biseccion_AR.limpiar",
+          "module": "biseccion_AR",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing3.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing3.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "2 Imagen",
+          "source": "xl/drawings/drawing3.xml"
+        }
+      ]
+    },
+    {
+      "name": "Punto Fijo",
+      "state": "visible",
+      "sheetId": "4",
+      "path": "xl/worksheets/sheet4.xml",
+      "dimension": "B3:N39",
+      "cellCount": 221,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "D3",
+          "value": "Funcion g(x) :"
+        },
+        {
+          "cell": "F3",
+          "value": "(10/(x+4))^0.5"
+        },
+        {
+          "cell": "D4",
+          "value": "Punto inicial (a) :"
+        },
+        {
+          "cell": "F4",
+          "value": 1.5
+        },
+        {
+          "cell": "D5",
+          "value": "Tolerancia (tol) :"
+        },
+        {
+          "cell": "F5",
+          "value": 1e-07
+        },
+        {
+          "cell": "D6",
+          "value": "Numero de Iteraciones:"
+        },
+        {
+          "cell": "F6",
+          "value": 35
+        },
+        {
+          "cell": "B8",
+          "value": "n"
+        },
+        {
+          "cell": "C8",
+          "value": "xo"
+        },
+        {
+          "cell": "D8",
+          "value": "g(xo)"
+        },
+        {
+          "cell": "E8",
+          "value": "Error"
+        },
+        {
+          "cell": "B9",
+          "value": 1
+        },
+        {
+          "cell": "C9",
+          "value": 1.5
+        },
+        {
+          "cell": "D9",
+          "value": 1.348399724926484
+        },
+        {
+          "cell": "E9",
+          "value": 0.15160027507351592
+        },
+        {
+          "cell": "B10",
+          "value": 2
+        },
+        {
+          "cell": "C10",
+          "value": 1.348399724926484
+        },
+        {
+          "cell": "D10",
+          "value": 1.3673763719912835
+        },
+        {
+          "cell": "E10",
+          "value": 0.0189766470647994
+        },
+        {
+          "cell": "B11",
+          "value": 3
+        },
+        {
+          "cell": "C11",
+          "value": 1.3673763719912835
+        },
+        {
+          "cell": "D11",
+          "value": 1.3649570154024875
+        },
+        {
+          "cell": "E11",
+          "value": 0.0024193565887959956
+        },
+        {
+          "cell": "B12",
+          "value": 4
+        },
+        {
+          "cell": "C12",
+          "value": 1.3649570154024875
+        },
+        {
+          "cell": "D12",
+          "value": 1.3652647481134417
+        },
+        {
+          "cell": "E12",
+          "value": 0.0003077327109541894
+        },
+        {
+          "cell": "B13",
+          "value": 5
+        },
+        {
+          "cell": "C13",
+          "value": 1.3652647481134417
+        },
+        {
+          "cell": "D13",
+          "value": 1.3652255941605254
+        },
+        {
+          "cell": "E13",
+          "value": 3.9153952916315404e-05
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!inicio_puntofijo",
+          "qualified": "inicio_puntofijo",
+          "module": "",
+          "procedure": "inicio_puntofijo",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing4.vml"
+        },
+        {
+          "raw": "[0]!puntofijo_AR.limpiar",
+          "qualified": "puntofijo_AR.limpiar",
+          "module": "puntofijo_AR",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing4.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing4.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "19 Imagen",
+          "source": "xl/drawings/drawing4.xml"
+        }
+      ]
+    },
+    {
+      "name": "Secante",
+      "state": "visible",
+      "sheetId": "5",
+      "path": "xl/worksheets/sheet5.xml",
+      "dimension": "B2:N39",
+      "cellCount": 212,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "C2",
+          "value": "Funcion f(x) :"
+        },
+        {
+          "cell": "E2",
+          "value": "sqrt(x)-2*cos(x)"
+        },
+        {
+          "cell": "C3",
+          "value": "Punto inicial (a) :"
+        },
+        {
+          "cell": "E3",
+          "value": 0
+        },
+        {
+          "cell": "C4",
+          "value": "Punto final (b) :"
+        },
+        {
+          "cell": "E4",
+          "value": 1
+        },
+        {
+          "cell": "C5",
+          "value": "Tolerancia (tol) :"
+        },
+        {
+          "cell": "E5",
+          "value": 0.0001
+        },
+        {
+          "cell": "C6",
+          "value": "Numero de Iteraciones:"
+        },
+        {
+          "cell": "E6",
+          "value": 12
+        },
+        {
+          "cell": "B8",
+          "value": "n"
+        },
+        {
+          "cell": "C8",
+          "value": "Xn-1"
+        },
+        {
+          "cell": "D8",
+          "value": "Xn"
+        },
+        {
+          "cell": "E8",
+          "value": "Xn+1"
+        },
+        {
+          "cell": "F8",
+          "value": "Error"
+        },
+        {
+          "cell": "B9",
+          "value": 1
+        },
+        {
+          "cell": "C9",
+          "value": 0
+        },
+        {
+          "cell": "D9",
+          "value": 1
+        },
+        {
+          "cell": "E9",
+          "value": 1.0419947928546365
+        },
+        {
+          "cell": "F9",
+          "value": 0.041994792854636476
+        },
+        {
+          "cell": "B10",
+          "value": 2
+        },
+        {
+          "cell": "C10",
+          "value": 1
+        },
+        {
+          "cell": "D10",
+          "value": 1.0419947928546365
+        },
+        {
+          "cell": "E10",
+          "value": 1.0366385937272768
+        },
+        {
+          "cell": "F10",
+          "value": 0.005356199127359629
+        },
+        {
+          "cell": "B11",
+          "value": 3
+        },
+        {
+          "cell": "C11",
+          "value": 1.0419947928546365
+        },
+        {
+          "cell": "D11",
+          "value": 1.0366385937272768
+        },
+        {
+          "cell": "E11",
+          "value": 1.036673842999907
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!inicio_secante",
+          "qualified": "inicio_secante",
+          "module": "",
+          "procedure": "inicio_secante",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing5.vml"
+        },
+        {
+          "raw": "[0]!secante_AR.limpiar",
+          "qualified": "secante_AR.limpiar",
+          "module": "secante_AR",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing5.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing5.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "5 Imagen",
+          "source": "xl/drawings/drawing5.xml"
+        }
+      ]
+    },
+    {
+      "name": "Posicion Falsa",
+      "state": "visible",
+      "sheetId": "6",
+      "path": "xl/worksheets/sheet6.xml",
+      "dimension": "B2:N37",
+      "cellCount": 178,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "C2",
+          "value": "Funcion f(x) :"
+        },
+        {
+          "cell": "E2",
+          "value": "2*x-3*cos(x)"
+        },
+        {
+          "cell": "C3",
+          "value": "Punto inicial (a) :"
+        },
+        {
+          "cell": "E3",
+          "value": 0
+        },
+        {
+          "cell": "C4",
+          "value": "Punto final (b) :"
+        },
+        {
+          "cell": "E4",
+          "value": 2
+        },
+        {
+          "cell": "C5",
+          "value": "Tolerancia (tol) :"
+        },
+        {
+          "cell": "E5",
+          "value": 0.0001
+        },
+        {
+          "cell": "C6",
+          "value": "Numero de Iteraciones:"
+        },
+        {
+          "cell": "E6",
+          "value": 6
+        },
+        {
+          "cell": "B8",
+          "value": "n"
+        },
+        {
+          "cell": "C8",
+          "value": "Xn-1"
+        },
+        {
+          "cell": "D8",
+          "value": "Xn"
+        },
+        {
+          "cell": "E8",
+          "value": "Xn+1"
+        },
+        {
+          "cell": "F8",
+          "value": "error"
+        },
+        {
+          "cell": "B9",
+          "value": 1
+        },
+        {
+          "cell": "C9",
+          "value": 0
+        },
+        {
+          "cell": "D9",
+          "value": 2
+        },
+        {
+          "cell": "E9",
+          "value": 0.7274102289986484
+        },
+        {
+          "cell": "F9",
+          "value": 1.2725897710013516
+        },
+        {
+          "cell": "B10",
+          "value": 2
+        },
+        {
+          "cell": "C10",
+          "value": 0.7274102289986484
+        },
+        {
+          "cell": "D10",
+          "value": 2
+        },
+        {
+          "cell": "E10",
+          "value": 0.8931453477604197
+        },
+        {
+          "cell": "F10",
+          "value": 0.16573511876177127
+        },
+        {
+          "cell": "B11",
+          "value": 3
+        },
+        {
+          "cell": "C11",
+          "value": 0.8931453477604197
+        },
+        {
+          "cell": "D11",
+          "value": 2
+        },
+        {
+          "cell": "E11",
+          "value": 0.9127432405711915
+        },
+        {
+          "cell": "F11",
+          "value": 0.019597892810771844
+        },
+        {
+          "cell": "B12",
+          "value": 4
+        },
+        {
+          "cell": "C12",
+          "value": 0.9127432405711915
+        },
+        {
+          "cell": "D12",
+          "value": 2
+        },
+        {
+          "cell": "E12",
+          "value": 0.9146553488565377
+        },
+        {
+          "cell": "F12",
+          "value": 0.001912108285346159
+        },
+        {
+          "cell": "B13",
+          "value": 5
+        },
+        {
+          "cell": "C13",
+          "value": 0.9146553488565377
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!inicio_posicionfalsa",
+          "qualified": "inicio_posicionfalsa",
+          "module": "",
+          "procedure": "inicio_posicionfalsa",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing6.vml"
+        },
+        {
+          "raw": "[0]!posicionfalsa_AR.limpiar",
+          "qualified": "posicionfalsa_AR.limpiar",
+          "module": "posicionfalsa_AR",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing6.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing6.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing6.xml"
+        }
+      ]
+    },
+    {
+      "name": "Steffenssen",
+      "state": "visible",
+      "sheetId": "7",
+      "path": "xl/worksheets/sheet7.xml",
+      "dimension": "B2:O47",
+      "cellCount": 182,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "C2",
+          "value": "Funcion  g(x) :"
+        },
+        {
+          "cell": "E2",
+          "value": "LN(6-2^(-x)-cos(x))"
+        },
+        {
+          "cell": "C3",
+          "value": "Punto inicial (Po) :"
+        },
+        {
+          "cell": "E3",
+          "value": 2
+        },
+        {
+          "cell": "C4",
+          "value": "Tolerancia (tol) :"
+        },
+        {
+          "cell": "E4",
+          "value": 1e-06
+        },
+        {
+          "cell": "C5",
+          "value": "Numero de Iteraciones:"
+        },
+        {
+          "cell": "E5",
+          "value": 30
+        },
+        {
+          "cell": "B7",
+          "value": "n"
+        },
+        {
+          "cell": "C7",
+          "value": "Po"
+        },
+        {
+          "cell": "D7",
+          "value": "P1"
+        },
+        {
+          "cell": "E7",
+          "value": "P2"
+        },
+        {
+          "cell": "F7",
+          "value": "Pn+1"
+        },
+        {
+          "cell": "G7",
+          "value": "Error"
+        },
+        {
+          "cell": "B8",
+          "value": 1
+        },
+        {
+          "cell": "C8",
+          "value": 2
+        },
+        {
+          "cell": "D8",
+          "value": 1.8190741430868573
+        },
+        {
+          "cell": "E8",
+          "value": 1.7854617065249345
+        },
+        {
+          "cell": "F8",
+          "value": 1.7777923720614779
+        },
+        {
+          "cell": "G8",
+          "value": 0.2222076279385221
+        },
+        {
+          "cell": "B9",
+          "value": 2
+        },
+        {
+          "cell": "C9",
+          "value": 1.7777923720614779
+        },
+        {
+          "cell": "D9",
+          "value": 1.777304107661702
+        },
+        {
+          "cell": "E9",
+          "value": 1.7772066068354457
+        },
+        {
+          "cell": "F9",
+          "value": 1.7771822790532141
+        },
+        {
+          "cell": "G9",
+          "value": 0.0006100930082637568
+        },
+        {
+          "cell": "B10",
+          "value": 3
+        },
+        {
+          "cell": "C10",
+          "value": 1.7771822790532141
+        },
+        {
+          "cell": "D10",
+          "value": 1.777182275400995
+        },
+        {
+          "cell": "E10",
+          "value": 1.777182274671557
+        },
+        {
+          "cell": "F10",
+          "value": 1.7771822744895114
+        },
+        {
+          "cell": "G10",
+          "value": 4.563702749038612e-09
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!inicio_steffenssen",
+          "qualified": "inicio_steffenssen",
+          "module": "",
+          "procedure": "inicio_steffenssen",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing7.vml"
+        },
+        {
+          "raw": "[0]!steffenssen_AR.limpiar",
+          "qualified": "steffenssen_AR.limpiar",
+          "module": "steffenssen_AR",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing7.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing7.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing7.xml"
+        }
+      ]
+    },
+    {
+      "name": "Newton",
+      "state": "visible",
+      "sheetId": "8",
+      "path": "xl/worksheets/sheet8.xml",
+      "dimension": "B2:L34",
+      "cellCount": 125,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "C2",
+          "value": "Funcion f(x) :"
+        },
+        {
+          "cell": "E2",
+          "value": "x^3-2*x^2-5"
+        },
+        {
+          "cell": "C4",
+          "value": "Punto inicial (Po) :"
+        },
+        {
+          "cell": "E4",
+          "value": 2
+        },
+        {
+          "cell": "C5",
+          "value": "Tolerancia (tol) :"
+        },
+        {
+          "cell": "E5",
+          "value": 0.0001
+        },
+        {
+          "cell": "C6",
+          "value": "Numero de Iteraciones:"
+        },
+        {
+          "cell": "E6",
+          "value": 25
+        },
+        {
+          "cell": "B8",
+          "value": "n"
+        },
+        {
+          "cell": "C8",
+          "value": "Xn"
+        },
+        {
+          "cell": "D8",
+          "value": "Xn+1"
+        },
+        {
+          "cell": "E8",
+          "value": "Error"
+        },
+        {
+          "cell": "B9",
+          "value": 1
+        },
+        {
+          "cell": "C9",
+          "value": 2
+        },
+        {
+          "cell": "D9",
+          "value": 3.250000000000016
+        },
+        {
+          "cell": "E9",
+          "value": 1.250000000000016
+        },
+        {
+          "cell": "B10",
+          "value": 2
+        },
+        {
+          "cell": "C10",
+          "value": 3.250000000000016
+        },
+        {
+          "cell": "D10",
+          "value": 2.8110367892976624
+        },
+        {
+          "cell": "E10",
+          "value": 0.43896321070235356
+        },
+        {
+          "cell": "B11",
+          "value": 3
+        },
+        {
+          "cell": "C11",
+          "value": 2.8110367892976624
+        },
+        {
+          "cell": "D11",
+          "value": 2.6979895024685305
+        },
+        {
+          "cell": "E11",
+          "value": 0.1130472868291319
+        },
+        {
+          "cell": "B12",
+          "value": 4
+        },
+        {
+          "cell": "C12",
+          "value": 2.6979895024685305
+        },
+        {
+          "cell": "D12",
+          "value": 2.690677152860362
+        },
+        {
+          "cell": "E12",
+          "value": 0.0073123496081684
+        },
+        {
+          "cell": "B13",
+          "value": 5
+        },
+        {
+          "cell": "C13",
+          "value": 2.690677152860362
+        },
+        {
+          "cell": "D13",
+          "value": 2.690647448517621
+        },
+        {
+          "cell": "E13",
+          "value": 2.9704342741077028e-05
+        },
+        {
+          "cell": "B15",
+          "value": "La raiz se encontro en la 5 iteracion, con un valor de 2.69064744851762"
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!inicio_newton",
+          "qualified": "inicio_newton",
+          "module": "",
+          "procedure": "inicio_newton",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing8.vml"
+        },
+        {
+          "raw": "[0]!newton_AR.limpiar",
+          "qualified": "newton_AR.limpiar",
+          "module": "newton_AR",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing8.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing8.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing8.xml"
+        }
+      ]
+    },
+    {
+      "name": "Muller",
+      "state": "visible",
+      "sheetId": "9",
+      "path": "xl/worksheets/sheet9.xml",
+      "dimension": "B2:X48",
+      "cellCount": 241,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "C2",
+          "value": "Funcion f(x) :"
+        },
+        {
+          "cell": "E2",
+          "value": "16*x^4-40*x^3+5*x^2+20*x+6"
+        },
+        {
+          "cell": "C3",
+          "value": "x0:"
+        },
+        {
+          "cell": "E3",
+          "value": 2.5
+        },
+        {
+          "cell": "C4",
+          "value": "x1:"
+        },
+        {
+          "cell": "E4",
+          "value": 2
+        },
+        {
+          "cell": "C5",
+          "value": "x2:"
+        },
+        {
+          "cell": "E5",
+          "value": 2.25
+        },
+        {
+          "cell": "C6",
+          "value": "Tolerancia (Tol):"
+        },
+        {
+          "cell": "E6",
+          "value": 1e-05
+        },
+        {
+          "cell": "C7",
+          "value": "Maximo iteraciones"
+        },
+        {
+          "cell": "E7",
+          "value": 20
+        },
+        {
+          "cell": "X8",
+          "value": 6
+        },
+        {
+          "cell": "B9",
+          "value": "n"
+        },
+        {
+          "cell": "C9",
+          "value": "xo"
+        },
+        {
+          "cell": "D9",
+          "value": "x1"
+        },
+        {
+          "cell": "E9",
+          "value": "x2"
+        },
+        {
+          "cell": "F9",
+          "value": "x3"
+        },
+        {
+          "cell": "G9",
+          "value": "f(x0)"
+        },
+        {
+          "cell": "H9",
+          "value": "f(x1)"
+        },
+        {
+          "cell": "I9",
+          "value": "f(x2)"
+        },
+        {
+          "cell": "J9",
+          "value": "f(x3)"
+        },
+        {
+          "cell": "K9",
+          "value": "Error"
+        },
+        {
+          "cell": "X9",
+          "value": 0
+        },
+        {
+          "cell": "B10",
+          "value": 1
+        },
+        {
+          "cell": "C10",
+          "value": 2.5
+        },
+        {
+          "cell": "D10",
+          "value": 2
+        },
+        {
+          "cell": "E10",
+          "value": 2.25
+        },
+        {
+          "cell": "F10",
+          "value": 1.960592288479808
+        },
+        {
+          "cell": "G10",
+          "value": 87.25
+        },
+        {
+          "cell": "H10",
+          "value": 2
+        },
+        {
+          "cell": "I10",
+          "value": 30.75
+        },
+        {
+          "cell": "J10",
+          "value": -0.6113099543212499
+        },
+        {
+          "cell": "K10",
+          "value": 0.28940771152019207
+        },
+        {
+          "cell": "X10",
+          "value": -12
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!PrincipalMuller",
+          "qualified": "PrincipalMuller",
+          "module": "",
+          "procedure": "PrincipalMuller",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing9.vml"
+        },
+        {
+          "raw": "[0]!limpiar_muller",
+          "qualified": "limpiar_muller",
+          "module": "",
+          "procedure": "limpiar_muller",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing9.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing9.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing9.xml"
+        }
+      ]
+    },
+    {
+      "name": "Lagrange",
+      "state": "visible",
+      "sheetId": "10",
+      "path": "xl/worksheets/sheet10.xml",
+      "dimension": "A1:CL42",
+      "cellCount": 454,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "A1",
+          "value": "Polinomio de Lagrange"
+        },
+        {
+          "cell": "B3",
+          "value": "Pol. de Grado ="
+        },
+        {
+          "cell": "D3",
+          "value": 3
+        },
+        {
+          "cell": "B4",
+          "value": "X a Interpolar = "
+        },
+        {
+          "cell": "D4",
+          "value": 2020
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!PrincipalLagrange",
+          "qualified": "PrincipalLagrange",
+          "module": "",
+          "procedure": "PrincipalLagrange",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing10.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing10.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "2 Imagen",
+          "source": "xl/drawings/drawing10.xml"
+        }
+      ]
+    },
+    {
+      "name": "Neville",
+      "state": "visible",
+      "sheetId": "11",
+      "path": "xl/worksheets/sheet11.xml",
+      "dimension": "A1:P26",
+      "cellCount": 175,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "A1",
+          "value": "METODO DE APROXIMACION DE NEVILLE"
+        },
+        {
+          "cell": "B4",
+          "value": "NUMERO DE DATOS A INGRESAR"
+        },
+        {
+          "cell": "F4",
+          "value": 3
+        },
+        {
+          "cell": "B6",
+          "value": "VALOR A INTERPOLAR"
+        },
+        {
+          "cell": "F6",
+          "value": 1.5
+        },
+        {
+          "cell": "C9",
+          "value": 0
+        },
+        {
+          "cell": "D9",
+          "value": 1
+        },
+        {
+          "cell": "E9",
+          "value": 2
+        },
+        {
+          "cell": "F9",
+          "value": 3
+        },
+        {
+          "cell": "G9",
+          "value": 4
+        },
+        {
+          "cell": "B10",
+          "value": "x ="
+        },
+        {
+          "cell": "C10",
+          "value": 1
+        },
+        {
+          "cell": "D10",
+          "value": 1.3
+        },
+        {
+          "cell": "E10",
+          "value": 1.6
+        },
+        {
+          "cell": "F10",
+          "value": 0
+        },
+        {
+          "cell": "G10",
+          "value": 0
+        },
+        {
+          "cell": "B11",
+          "value": "f (x) ="
+        },
+        {
+          "cell": "C11",
+          "value": 0.7651977
+        },
+        {
+          "cell": "D11",
+          "value": 0.620086
+        },
+        {
+          "cell": "E11",
+          "value": 0.4554022
+        },
+        {
+          "cell": "F11",
+          "value": 0
+        },
+        {
+          "cell": "G11",
+          "value": 0
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing11.vml"
+        },
+        {
+          "raw": "[0]!Hoja9.PrincipalNeville",
+          "qualified": "Hoja9.PrincipalNeville",
+          "module": "Hoja9",
+          "procedure": "PrincipalNeville",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing11.vml"
+        },
+        {
+          "raw": "[0]!Hoja9.limpiar_neville",
+          "qualified": "Hoja9.limpiar_neville",
+          "module": "Hoja9",
+          "procedure": "limpiar_neville",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing11.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing11.xml"
+        }
+      ]
+    },
+    {
+      "name": "Regresivas",
+      "state": "visible",
+      "sheetId": "12",
+      "path": "xl/worksheets/sheet12.xml",
+      "dimension": "A1:Q51",
+      "cellCount": 283,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "A1",
+          "value": "Metodo De Diferencias Regresivas y Progresivas"
+        },
+        {
+          "cell": "B3",
+          "value": "NUMERO DE DATOS A INGRESAR:"
+        },
+        {
+          "cell": "F3",
+          "value": 4
+        },
+        {
+          "cell": "B4",
+          "value": "DATO A INTERPOLAR O EXTRAPOLAR:"
+        },
+        {
+          "cell": "F4",
+          "value": 1.5
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing12.vml"
+        },
+        {
+          "raw": "[0]!PrincipalDiferenciasDivididas",
+          "qualified": "PrincipalDiferenciasDivididas",
+          "module": "",
+          "procedure": "PrincipalDiferenciasDivididas",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing12.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing12.xml"
+        }
+      ]
+    },
+    {
+      "name": "Jacobi",
+      "state": "visible",
+      "sheetId": "13",
+      "path": "xl/worksheets/sheet13.xml",
+      "dimension": "A1:AX121",
+      "cellCount": 1809,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "A1",
+          "value": " JACOBI 3X3"
+        },
+        {
+          "cell": "K1",
+          "value": "JACOBI 4X4"
+        },
+        {
+          "cell": "W1",
+          "value": "JACOBI 5X5"
+        },
+        {
+          "cell": "AJ1",
+          "value": "JACOBI 6X6"
+        },
+        {
+          "cell": "B2",
+          "value": "INGRESE LOS COEFICIENTES DE LA MATRIZ DIAGONALMENTE DOMINANTE DE LA FORMA MATRIZ AUMENTADA"
+        },
+        {
+          "cell": "Y2",
+          "value": "AX"
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.PrincipalJacobi",
+          "qualified": "Hoja14.PrincipalJacobi",
+          "module": "Hoja14",
+          "procedure": "PrincipalJacobi",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.limpiar",
+          "qualified": "Hoja14.limpiar",
+          "module": "Hoja14",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.PrincipalJacobi_4",
+          "qualified": "Hoja14.PrincipalJacobi_4",
+          "module": "Hoja14",
+          "procedure": "PrincipalJacobi_4",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.limpiar_4",
+          "qualified": "Hoja14.limpiar_4",
+          "module": "Hoja14",
+          "procedure": "limpiar_4",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.PrincipalJacobi_5",
+          "qualified": "Hoja14.PrincipalJacobi_5",
+          "module": "Hoja14",
+          "procedure": "PrincipalJacobi_5",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.limpiar_5",
+          "qualified": "Hoja14.limpiar_5",
+          "module": "Hoja14",
+          "procedure": "limpiar_5",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.PrincipalJacobi_6",
+          "qualified": "Hoja14.PrincipalJacobi_6",
+          "module": "Hoja14",
+          "procedure": "PrincipalJacobi_6",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!Hoja14.limpiar_6",
+          "qualified": "Hoja14.limpiar_6",
+          "module": "Hoja14",
+          "procedure": "limpiar_6",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing13.vml"
+        }
+      ]
+    },
+    {
+      "name": "Gauss Seidel",
+      "state": "visible",
+      "sheetId": "14",
+      "path": "xl/worksheets/sheet14.xml",
+      "dimension": "A1:AX121",
+      "cellCount": 1588,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "A1",
+          "value": " GAUSS-SEIDEL 3X3"
+        },
+        {
+          "cell": "K1",
+          "value": "GAUSS-SEIDEL 4X4"
+        },
+        {
+          "cell": "W1",
+          "value": "GAUSS-SEIDEL 5X5"
+        },
+        {
+          "cell": "AJ1",
+          "value": "GAUSS-SEIDEL 6X6"
+        },
+        {
+          "cell": "B2",
+          "value": "INGRESE LOS COEFICIENTES DE LA MATRIZ DIAGONALMENTE DOMINANTE DE LA FORMA MATRIZ AUMENTADA"
+        },
+        {
+          "cell": "Y2",
+          "value": "AX"
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.Principalgaussseidel_3g",
+          "qualified": "Hoja15.Principalgaussseidel_3g",
+          "module": "Hoja15",
+          "procedure": "Principalgaussseidel_3g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.limpiar",
+          "qualified": "Hoja15.limpiar",
+          "module": "Hoja15",
+          "procedure": "limpiar",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.Principalgaussseidel_4g",
+          "qualified": "Hoja15.Principalgaussseidel_4g",
+          "module": "Hoja15",
+          "procedure": "Principalgaussseidel_4g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.limpiar_4g",
+          "qualified": "Hoja15.limpiar_4g",
+          "module": "Hoja15",
+          "procedure": "limpiar_4g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.Principalgaussseidel_5g",
+          "qualified": "Hoja15.Principalgaussseidel_5g",
+          "module": "Hoja15",
+          "procedure": "Principalgaussseidel_5g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.limpiar_5g",
+          "qualified": "Hoja15.limpiar_5g",
+          "module": "Hoja15",
+          "procedure": "limpiar_5g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.Principalgaussseidel_6g",
+          "qualified": "Hoja15.Principalgaussseidel_6g",
+          "module": "Hoja15",
+          "procedure": "Principalgaussseidel_6g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!Hoja15.limpiar_6g",
+          "qualified": "Hoja15.limpiar_6g",
+          "module": "Hoja15",
+          "procedure": "limpiar_6g",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing14.vml"
+        }
+      ]
+    },
+    {
+      "name": "Punto Fijo NL",
+      "state": "visible",
+      "sheetId": "15",
+      "path": "xl/worksheets/sheet15.xml",
+      "dimension": "B1:N78",
+      "cellCount": 531,
+      "formulaCount": 0,
+      "sampleValues": [
+        {
+          "cell": "B2",
+          "value": "g1(x) ="
+        },
+        {
+          "cell": "C2",
+          "value": "x2/(5^(0.5))"
+        },
+        {
+          "cell": "B3",
+          "value": "g2(x) ="
+        },
+        {
+          "cell": "C3",
+          "value": ".25*(sin(x1)+cos(x2))"
+        },
+        {
+          "cell": "B4",
+          "value": "g3(x) ="
+        },
+        {
+          "cell": "C4",
+          "value": 0
+        },
+        {
+          "cell": "B6",
+          "value": "Vector de arranque ="
+        },
+        {
+          "cell": "C6",
+          "value": 0.25
+        },
+        {
+          "cell": "C7",
+          "value": 0.25
+        },
+        {
+          "cell": "E7",
+          "value": "Maximo iteracion = "
+        },
+        {
+          "cell": "G7",
+          "value": 12
+        },
+        {
+          "cell": "C8",
+          "value": 0
+        },
+        {
+          "cell": "E8",
+          "value": "Tolerancia ="
+        },
+        {
+          "cell": "G8",
+          "value": 1e-05
+        }
+      ],
+      "macros": [
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "raw": "[0]!Hoja16.PrincipalPuntoFijoNL",
+          "qualified": "Hoja16.PrincipalPuntoFijoNL",
+          "module": "Hoja16",
+          "procedure": "PrincipalPuntoFijoNL",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "raw": "[0]!Hoja16.limpiar_PFNL",
+          "qualified": "Hoja16.limpiar_PFNL",
+          "module": "Hoja16",
+          "procedure": "limpiar_PFNL",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "raw": "[0]!ir_indice",
+          "qualified": "ir_indice",
+          "module": "",
+          "procedure": "ir_indice",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "raw": "[0]!Hoja16.PrincipalPuntoFijoNL",
+          "qualified": "Hoja16.PrincipalPuntoFijoNL",
+          "module": "Hoja16",
+          "procedure": "PrincipalPuntoFijoNL",
+          "objectType": "Button",
+          "source": "xl/drawings/vmlDrawing15.vml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "1 Imagen",
+          "source": "xl/drawings/drawing15.xml"
+        },
+        {
+          "raw": "[0]!acerca",
+          "qualified": "acerca",
+          "module": "",
+          "procedure": "acerca",
+          "objectType": "pic",
+          "objectName": "2 Imagen",
+          "source": "xl/drawings/drawing15.xml"
+        }
+      ]
+    }
+  ]
+}

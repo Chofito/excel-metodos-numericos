@@ -1,0 +1,749 @@
+{
+  "source": "/Users/chofito/universe/chofito/excel-metodos-numericos/PLANTILLA DE METODOS NUMERICOS_office 2007.xlsm",
+  "modules": [
+    {
+      "module": "acerca_AR",
+      "filename": "acerca_AR.bas",
+      "streamPath": "VBA/acerca_AR",
+      "sourceChars": 478,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "acerca"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "biseccion_AR",
+      "filename": "biseccion_AR.bas",
+      "streamPath": "VBA/biseccion_AR",
+      "sourceChars": 2718,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "Datos_Iniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "biseccion_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "inicio_biseccion"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "diferencias_AR",
+      "filename": "diferencias_AR.bas",
+      "streamPath": "VBA/diferencias_AR",
+      "sourceChars": 8425,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Sub",
+          "name": "DiferenciasDivididas"
+        },
+        {
+          "kind": "Sub",
+          "name": "EscribeSolucion"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalDiferenciasDivididas"
+        },
+        {
+          "kind": "Sub",
+          "name": "papapapapapapappa"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "Hoja1",
+      "filename": "Hoja1.cls",
+      "streamPath": "VBA/Hoja1",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja10",
+      "filename": "Hoja10.cls",
+      "streamPath": "VBA/Hoja10",
+      "sourceChars": 299,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja11",
+      "filename": "Hoja11.cls",
+      "streamPath": "VBA/Hoja11",
+      "sourceChars": 299,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja13",
+      "filename": "Hoja13.cls",
+      "streamPath": "VBA/Hoja13",
+      "sourceChars": 299,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja14",
+      "filename": "Hoja14.cls",
+      "streamPath": "VBA/Hoja14",
+      "sourceChars": 13050,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Sub",
+          "name": "jacobi_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalJacobi"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        },
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_4"
+        },
+        {
+          "kind": "Sub",
+          "name": "jacobi_AR_4"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalJacobi_4"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_4"
+        },
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_5"
+        },
+        {
+          "kind": "Sub",
+          "name": "jacobi_AR_5"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalJacobi_5"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_5"
+        },
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_6"
+        },
+        {
+          "kind": "Sub",
+          "name": "jacobi_AR_6"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalJacobi_6"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_6"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "Hoja15",
+      "filename": "Hoja15.cls",
+      "streamPath": "VBA/Hoja15",
+      "sourceChars": 13179,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_3g"
+        },
+        {
+          "kind": "Sub",
+          "name": "gaussseidel3g_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "Principalgaussseidel_3g"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        },
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_4g"
+        },
+        {
+          "kind": "Sub",
+          "name": "gaussseidel4g_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "Principalgaussseidel_4g"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_4g"
+        },
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_5g"
+        },
+        {
+          "kind": "Sub",
+          "name": "gaussseidel5g_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "Principalgaussseidel_5g"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_5g"
+        },
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales_6g"
+        },
+        {
+          "kind": "Sub",
+          "name": "gaussseidel6g_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "Principalgaussseidel_6g"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_6g"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "Hoja16",
+      "filename": "Hoja16.cls",
+      "streamPath": "VBA/Hoja16",
+      "sourceChars": 4022,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "PuntoFijoNL"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalPuntoFijoNL"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_PFNL"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "Hoja2",
+      "filename": "Hoja2.cls",
+      "streamPath": "VBA/Hoja2",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja3",
+      "filename": "Hoja3.cls",
+      "streamPath": "VBA/Hoja3",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja4",
+      "filename": "Hoja4.cls",
+      "streamPath": "VBA/Hoja4",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja5",
+      "filename": "Hoja5.cls",
+      "streamPath": "VBA/Hoja5",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja6",
+      "filename": "Hoja6.cls",
+      "streamPath": "VBA/Hoja6",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja7",
+      "filename": "Hoja7.cls",
+      "streamPath": "VBA/Hoja7",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja8",
+      "filename": "Hoja8.cls",
+      "streamPath": "VBA/Hoja8",
+      "sourceChars": 298,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "Hoja9",
+      "filename": "Hoja9.cls",
+      "streamPath": "VBA/Hoja9",
+      "sourceChars": 4273,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Sub",
+          "name": "Neville"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalNeville"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_neville"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "indice_AR",
+      "filename": "indice_AR.bas",
+      "streamPath": "VBA/indice_AR",
+      "sourceChars": 916,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ir_biseccion"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_secante"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_punto"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_posicion"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_Newton"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_neville"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_lagrange"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_indice"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_steffenssen"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_prog"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_reg"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_jacobi"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_gauss"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_muller"
+        },
+        {
+          "kind": "Sub",
+          "name": "ir_puntoNL"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "lagrange_AR",
+      "filename": "lagrange_AR.bas",
+      "streamPath": "VBA/lagrange_AR",
+      "sourceChars": 5223,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "fXn"
+        },
+        {
+          "kind": "Function",
+          "name": "Xn"
+        },
+        {
+          "kind": "Function",
+          "name": "Lnx"
+        },
+        {
+          "kind": "Function",
+          "name": "Pk"
+        },
+        {
+          "kind": "Function",
+          "name": "Pka"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "Lagrange"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalLagrange"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "Manual_AR",
+      "filename": "Manual_AR.bas",
+      "streamPath": "VBA/Manual_AR",
+      "sourceChars": 87,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "manual"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "muller_AR",
+      "filename": "muller_AR.bas",
+      "streamPath": "VBA/muller_AR",
+      "sourceChars": 2830,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "Muller"
+        },
+        {
+          "kind": "Sub",
+          "name": "PrincipalMuller"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar_muller"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "newton_AR",
+      "filename": "newton_AR.bas",
+      "streamPath": "VBA/newton_AR",
+      "sourceChars": 2174,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "Newton"
+        },
+        {
+          "kind": "Sub",
+          "name": "inicio_newton"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "posicionfalsa_AR",
+      "filename": "posicionfalsa_AR.bas",
+      "streamPath": "VBA/posicionfalsa_AR",
+      "sourceChars": 2640,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "PosicionFalsa"
+        },
+        {
+          "kind": "Sub",
+          "name": "inicio_posicionfalsa"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "puntofijo_AR",
+      "filename": "puntofijo_AR.bas",
+      "streamPath": "VBA/puntofijo_AR",
+      "sourceChars": 1912,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "g"
+        },
+        {
+          "kind": "Sub",
+          "name": "puntofijo"
+        },
+        {
+          "kind": "Sub",
+          "name": "inicio_puntofijo"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "secante_AR",
+      "filename": "secante_AR.bas",
+      "streamPath": "VBA/secante_AR",
+      "sourceChars": 2176,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "f"
+        },
+        {
+          "kind": "Sub",
+          "name": "Secante"
+        },
+        {
+          "kind": "Sub",
+          "name": "inicio_secante"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "steffenssen_AR",
+      "filename": "steffenssen_AR.bas",
+      "streamPath": "VBA/steffenssen_AR",
+      "sourceChars": 2157,
+      "procedures": [
+        {
+          "kind": "Sub",
+          "name": "ParametrosIniciales"
+        },
+        {
+          "kind": "Function",
+          "name": "g"
+        },
+        {
+          "kind": "Sub",
+          "name": "Steffensen_AR"
+        },
+        {
+          "kind": "Sub",
+          "name": "limpiar"
+        },
+        {
+          "kind": "Sub",
+          "name": "inicio_steffenssen"
+        }
+      ],
+      "hasAttributeName": true,
+      "hasSubOrFunction": true,
+      "hasEndStatement": true
+    },
+    {
+      "module": "ThisWorkbook",
+      "filename": "ThisWorkbook.cls",
+      "streamPath": "VBA/ThisWorkbook",
+      "sourceChars": 305,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "UserForm1",
+      "filename": "UserForm1.frm",
+      "streamPath": "VBA/UserForm1",
+      "sourceChars": 342,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    },
+    {
+      "module": "UserForm2",
+      "filename": "UserForm2.frm",
+      "streamPath": "VBA/UserForm2",
+      "sourceChars": 342,
+      "procedures": [],
+      "hasAttributeName": true,
+      "hasSubOrFunction": false,
+      "hasEndStatement": false
+    }
+  ]
+}
